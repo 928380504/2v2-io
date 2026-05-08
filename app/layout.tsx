@@ -91,7 +91,12 @@ gtag('config', 'G-WB6RMTYRVW');`}
           src="https://plausible.jiang-shuai.com/js/script.js"
           strategy="afterInteractive"
         />
-        
+        {/* adsterra广告代码 - 立即加载 */}
+        <Script
+          async
+          src="https://pl28854173.effectivegatecpm.com/5f/d7/2f/5fd72f174cf4f96c0b4b444ef98f2f35.js"
+          strategy="afterInteractive"
+        />
       </head>
       <body className="font-sans">
         <ThemeProvider
