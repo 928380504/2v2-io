@@ -62,41 +62,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* Microsoft Clarity - 立即加载 */}
-        <Script id="clarity" strategy="beforeInteractive">
-          {`(function(c,l,a,r,i,t,y){
-  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-})(window, document, "clarity", "script", "vfkzxviunm");`}
-        </Script>
-
-        {/* Google Analytics - 立即加载 */}
-        <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-WB6RMTYRVW"
-          strategy="beforeInteractive"
-        />
-        <Script id="gtag" strategy="beforeInteractive">
-          {`window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-WB6RMTYRVW');`}
-        </Script>
-
-        {/* plausible统计 - 立即加载 */}
-        <Script
-          defer
-          data-domain="2v2-io.com"
-          src="https://plausible.jiang-shuai.com/js/script.js"
-          strategy="afterInteractive"
-        />
-        {/* adsterra广告代码 - 立即加载 */}
-        <Script
-          async
-          src="https://pl28854173.effectivegatecpm.com/5f/d7/2f/5fd72f174cf4f96c0b4b444ef98f2f35.js"
-          strategy="afterInteractive"
-        />
+    
       </head>
       <body className="font-sans">
         <ThemeProvider
