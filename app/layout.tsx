@@ -5,6 +5,8 @@ import Navbar from "@/components/All/Navbar";
 import { Footer } from "@/components/All/Footer";
 import Script from 'next/script';
 
+import { AnalyticsHead } from "@/components/analytics-head"
+import { AdsHead } from "@/components/ads-head"
 export const metadata: Metadata = {
   metadataBase: new URL('https://2v2-io.com'),
   title: '2v2.io - Play Online for Free!',
@@ -63,7 +65,9 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
     
-      </head>
+      
+        <AnalyticsHead />
+        <AdsHead /></head>
       <body className="font-sans">
         <ThemeProvider
           attribute="class"

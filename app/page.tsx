@@ -13,6 +13,7 @@ import { Faq } from "@/components/TxT/Faq";
 import { RelatedGames } from "@/components/YouXi/Games-Related";
 import { GameIntro } from "@/components/TxT/Intro";
 
+import { LinkFooter } from "@/components/link-footer"
 export default function Home() {
   return (
     <>
@@ -66,6 +67,7 @@ export default function Home() {
           <Faq />
         </div>
       </ContentSection>
+      <LinkFooter />
     </>
   );
 }
