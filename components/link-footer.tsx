@@ -7,7 +7,13 @@ interface OutboundLink {
 }
 
 export function LinkFooter() {
-  const outbound = (siteConfig as any).friendLinks?.outbound as OutboundLink[] | undefined
+  const friendLinks = (siteConfig as any).friendLinks
+
+  if (!friendLinks?.enabled) {
+    return null
+  }
+
+  const outbound = friendLinks?.outbound as OutboundLink[] | undefined
 
   if (!outbound || outbound.length === 0) {
     return null

@@ -16,7 +16,9 @@ export function AdsHead() {
   }
 
   scripts.push(...(ads.customAdScripts || []))
-  scripts.push(...(ads.adsterra?.entries || []))
+  if (ads.adsterra?.enabled) {
+    scripts.push(...(ads.adsterra?.entries || []))
+  }
   scripts.push(...(ads.monetag?.entries || []))
 
   const html = scripts
