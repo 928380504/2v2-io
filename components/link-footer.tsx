@@ -1,4 +1,4 @@
-import siteConfig from "@/src/config/site.generated.json"
+import siteConfig from "@/site/generated/site.generated.json"
 
 interface OutboundLink {
   domain: string
@@ -21,7 +21,7 @@ export function LinkFooter() {
 
   return (
     <div className="w-full py-6">
-      <div className="max-w-[1200px] mx-auto px-4">
+      <div className="mx-auto max-w-[1200px] px-4">
         <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
           Recommended Sites
         </h2>

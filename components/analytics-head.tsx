@@ -1,5 +1,5 @@
 import Script from "next/script"
-import siteConfig from "@/src/config/site.generated.json"
+import siteConfig from "@/site/generated/site.generated.json"
 
 export function AnalyticsHead() {
   const analytics = siteConfig.analytics
@@ -15,9 +15,9 @@ export function AnalyticsHead() {
           <>
             <Script
               src={`https://www.googletagmanager.com/gtag/js?id=${analytics.googleAnalytics.measurementId}`}
-              strategy="afterInteractive"
+              strategy="lazyOnload"
             />
-            <Script id="google-analytics" strategy="afterInteractive">
+            <Script id="google-analytics" strategy="lazyOnload">
               {`
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
@@ -29,7 +29,7 @@ export function AnalyticsHead() {
         )}
 
       {analytics.clarity?.enabled && analytics.clarity.projectId && (
-        <Script id="microsoft-clarity" strategy="afterInteractive">
+        <Script id="microsoft-clarity" strategy="lazyOnload">
           {`
             (function(c,l,a,r,i,t,y){
               c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -46,7 +46,7 @@ export function AnalyticsHead() {
           <Script
             key={script.id}
             id={script.id}
-            strategy="afterInteractive"
+            strategy="lazyOnload"
             dangerouslySetInnerHTML={{
               __html: script.code,
             }}

@@ -1,0 +1,187 @@
+{
+  "schemaVersion": 1,
+  "site": {
+    "id": "1v1-lol",
+    "name": "1v1 LOL",
+    "brandName": "1v1-lol.cc",
+    "domain": "1v1-lol.cc",
+    "email": "owner@example.com",
+    "timeZone": "America/New_York",
+    "primaryGameId": "1v1-lol",
+    "legalLastUpdated": "August 17, 2026",
+    "assets": {
+      "gameOrigin": "https://mt.1v1-lol.cc",
+      "logo": "/1v1-lol-logo.webp",
+      "navigationLogo": "/1v1-lol-logo.png",
+      "favicon": "/favicon.ico"
+    },
+    "seo": {
+      "title": "1v1 LOL - Play Online for Free!",
+      "description": "Play fast browser-based building and shooting matches with a focused collection of related games.",
+      "keywords": ["1v1 lol", "building games", "shooting games"]
+    },
+    "footerGameIds": ["1v1-lol"]
+  },
+  "routes": {
+    "categoryPath": "/1v1-lol-games",
+    "filterPath": "/shooting-games",
+    "filterLabel": "Shooting Games"
+  },
+  "category": {
+    "id": "1v1-lol-games",
+    "title": "1v1 LOL Games",
+    "heading": "Free Online 1v1 LOL Games",
+    "description": "Browse fast building and shooting games designed for short browser sessions and skill-based competition.",
+    "metadataTitle": "1v1 LOL Games - Play Online",
+    "metadataDescription": "Play free online 1v1 LOL games and browse related building, shooting, and battle games.",
+    "socialDescription": "Browse free building and shooting games inspired by fast 1v1 competition.",
+    "keywords": "1v1 lol games, building games, shooting games"
+  },
+  "filters": {
+    "schemaVersion": 1,
+    "primaryMatchGroup": "gameplay",
+    "aliases": {
+      "mobile": "touch"
+    },
+    "groups": [
+      {
+        "key": "players",
+        "attributeKey": "playerModes",
+        "generatorKey": "player-modes",
+        "label": "Player Mode",
+        "icon": "players",
+        "multiple": true,
+        "defaultValues": [],
+        "generatorDefaultValues": ["multiplayer"],
+        "options": [
+          { "slug": "single-player", "label": "Single Player", "description": "Play without online matchmaking." },
+          { "slug": "multiplayer", "label": "Multiplayer", "description": "Compete with other players online." },
+          { "slug": "two-player", "label": "Two Player", "description": "Play a match designed for two players." }
+        ]
+      },
+      {
+        "key": "controls",
+        "attributeKey": "controls",
+        "generatorKey": "controls",
+        "label": "Controls",
+        "icon": "controls",
+        "multiple": true,
+        "defaultValues": ["keyboard-mouse"],
+        "generatorDefaultValues": ["keyboard-mouse"],
+        "options": [
+          { "slug": "keyboard-mouse", "label": "Keyboard & Mouse", "description": "Use a physical keyboard and mouse." },
+          { "slug": "touch", "label": "Touch Controls", "description": "Use on-screen mobile controls." },
+          { "slug": "gamepad", "label": "Gamepad", "description": "Use a connected controller." }
+        ]
+      },
+      {
+        "key": "loading",
+        "attributeKey": "loadSpeed",
+        "generatorKey": "load-speed",
+        "label": "Load Speed",
+        "icon": "loading",
+        "multiple": false,
+        "defaultValues": ["normal-loading"],
+        "generatorDefaultValues": ["normal-loading"],
+        "options": [
+          { "slug": "fast-loading", "label": "Fast", "description": "Usually opens quickly." },
+          { "slug": "normal-loading", "label": "Normal", "description": "Uses a typical browser loading time." },
+          { "slug": "slow-loading", "label": "Slow", "description": "May need a longer initial wait." }
+        ]
+      },
+      {
+        "key": "gameplay",
+        "attributeKey": "gameplay",
+        "generatorKey": "gameplay",
+        "label": "Gameplay",
+        "icon": "pvp",
+        "multiple": true,
+        "defaultValues": [],
+        "generatorDefaultValues": ["pvp"],
+        "options": [
+          { "slug": "pvp", "label": "PvP", "description": "Compete directly against another player." },
+          { "slug": "building", "label": "Building", "description": "Create structures during play." },
+          { "slug": "battle-royale", "label": "Battle Royale", "description": "Fight to become the final survivor." }
+        ]
+      },
+      {
+        "key": "perspective",
+        "attributeKey": "perspective",
+        "generatorKey": "perspective",
+        "label": "Perspective",
+        "icon": "perspective",
+        "multiple": true,
+        "defaultValues": [],
+        "generatorDefaultValues": ["third-person"],
+        "options": [
+          { "slug": "first-person", "label": "First-Person", "description": "Play from a first-person view." },
+          { "slug": "third-person", "label": "Third-Person", "description": "Play with a wider view of the character." },
+          { "slug": "top-down", "label": "Top-Down", "description": "Play from an overhead view." }
+        ]
+      }
+    ]
+  },
+  "games": [
+    {
+      "id": "1v1-lol",
+      "title": "1v1 LOL",
+      "description": "Build defensive structures, aim carefully, and compete in fast browser-based shooting matches.",
+      "image": "1v1-lol-games/1v1-lol/1v1-lol-logo.webp",
+      "playUrl": "1v1-lol-games/1v1-lol/index.html",
+      "coverImage": "1v1-lol-games/1v1-lol/1v1-lol-bj.webp",
+      "developer": "Independent Studio",
+      "technology": "HTML5 / WebGL",
+      "platforms": "Web Browser",
+      "playerModes": "single-player,multiplayer,two-player",
+      "controls": "keyboard-mouse,touch,gamepad",
+      "loadSpeed": "normal-loading",
+      "gameplay": "pvp,building,battle-royale",
+      "perspective": "third-person",
+      "matchBridge": true,
+      "siteAddedAt": "2026-08-17"
+    }
+  ],
+  "home": {
+    "backgroundImage": "/1v1-lol-bj.webp",
+    "coverTagline": "Build fast. Aim sharp. Win the match.",
+    "relatedGameIds": [],
+    "structuredImageCaption": "1v1 LOL game icon",
+    "descriptionHtml": "<section><h3>About 1v1 LOL</h3><p>Enter short browser matches that combine accurate shooting, movement, and real-time building.</p></section><section><h3>How to Play</h3><p>Select Play now, learn the controls shown in the game, and use cover before taking each fight.</p></section>",
+    "heroAlt": "1v1 LOL building and shooting gameplay",
+    "youtube": {
+      "videoId": "FaaIehafRes",
+      "title": "1v1 LOL Gameplay",
+      "description": "Watch a sample match and learn how building and shooting work together."
+    },
+    "faqItems": [
+      { "question": "How do I start playing?", "answer": "Select Play now in the game area. No separate installer is required." },
+      { "question": "Can I play on mobile?", "answer": "Supported mobile builds expose touch controls. Availability depends on the selected game and device." }
+    ]
+  },
+  "hotGames": {
+    "heading": "Hot Games",
+    "description": "Browse the games receiving the most real play activity.",
+    "limit": 21
+  },
+  "filterPage": {
+    "heading": "Shooting Games",
+    "filteredHeadingSuffix": "Shooting Games",
+    "description": "Filter browser shooting games by player mode, controls, loading speed, gameplay, and perspective.",
+    "resultNoun": "shooting game"
+  },
+  "cloudflare": {
+    "pagesProject": "1v1-lol",
+    "productionBranch": "main",
+    "database": {
+      "binding": "DB",
+      "name": "1v1-lol",
+      "location": "enam"
+    }
+  },
+  "competition": {
+    "adapterId": "1v1-lol"
+  },
+  "ranking": {
+    "excludedGameIds": []
+  }
+}

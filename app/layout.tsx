@@ -1,56 +1,65 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { ThemeProvider } from "@/components/ThemeProvider";
-import Navbar from "@/components/All/Navbar";
-import { Footer } from "@/components/All/Footer";
-import Script from 'next/script';
+import {
+  SiteActivityFeed,
+  SiteFeedbackWidget,
+  SiteFooter,
+  SiteNavbar,
+} from "@/components/slots";
+import { SITE_FEATURES } from "@/config/features";
+import { SITE_CONFIG, siteUrl } from "@/config/site";
+import { SITE_THEME, SITE_THEME_STYLE } from "@/config/theme";
 
 import { AnalyticsHead } from "@/components/analytics-head"
 import { AdsHead } from "@/components/ads-head"
+// 删除 Inter 字体配置代码块
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://2v2-io.com'),
-  title: '2v2.io - Play Online for Free!',
-  description: '2v2.io is a fast-paced battle royale game that fuses sharp shooting with instant building, where you and your teammate fight to be the last squad standing in a shrinking arena.​',
-  authors: [{ name: '2v2.io' }],
-  creator: '2v2.io',
-  publisher: '2v2.io',
+  metadataBase: new URL(SITE_CONFIG.url),
+  title: SITE_CONFIG.seo.title,
+  description: SITE_CONFIG.seo.description,
+  authors: [{ name: SITE_CONFIG.name }],
+  creator: SITE_CONFIG.name,
+  publisher: SITE_CONFIG.name,
   robots: 'index, follow',
   openGraph: {
     type: 'website',
-    title: '2v2.io - Play Online for Free!',
-    description: '2v2.io is a fast-paced battle royale game that fuses sharp shooting with instant building, where you and your teammate fight to be the last squad standing in a shrinking arena.​​',
-    url: 'https://2v2-io.com',
-    siteName: '2v2.io',
+    title: SITE_CONFIG.seo.title,
+    description: SITE_CONFIG.seo.description,
+    url: SITE_CONFIG.url,
+    siteName: SITE_CONFIG.name,
     images: [{
-      url: 'https://2v2-io.com/2v2-io-logo.webp',
-      alt: '2v2.io - Play Online for Free!',
+      url: siteUrl(SITE_CONFIG.assets.logo),
+      width: 100,
+      height: 100,
+      alt: SITE_CONFIG.seo.title,
       type: 'image/webp'
     }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: '2v2.io - Play Online for Free!',
-    description: '2v2.io is a fast-paced battle royale game that fuses sharp shooting with instant building, where you and your teammate fight to be the last squad standing in a shrinking arena.​​',
+    title: SITE_CONFIG.seo.title,
+    description: SITE_CONFIG.seo.description,
     images: [{
-      url: 'https://2v2-io.com/2v2-io-logo.webp',
-      alt: '2v2.io - Play Online for Free!',
+      url: siteUrl(SITE_CONFIG.assets.logo),
+      width: 100,
+      height: 100,
+      alt: SITE_CONFIG.seo.title,
       type: 'image/webp'
     }],
-    creator: '@PlanetClicker',
-    site: '@PlanetClicker'
-  },
-  // 添加传统的 meta 标签
-  other: {
-    'image_src': 'https://2v2-io.com/2v2-io-logo.webp'
+    creator: SITE_CONFIG.seo.twitterCreator,
+    site: SITE_CONFIG.seo.twitterCreator
   },
   alternates: {
-    canonical: 'https://2v2-io.com'
+    canonical: SITE_CONFIG.url
   },
   icons: {
-    icon: '/favicon.ico',
+    icon: SITE_CONFIG.assets.favicon,
   },
-  keywords: ['2v2.io',],
-  applicationName: '2v2.io',
+  // 删除 verification 配置
+  keywords: [...SITE_CONFIG.seo.keywords],
+  applicationName: SITE_CONFIG.name,
   formatDetection: {
     telephone: false
   }
@@ -62,26 +71,35 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={SITE_CONFIG.language} suppressHydrationWarning>
       <head>
-    
       
-        <AnalyticsHead />
-        <AdsHead /></head>
-      <body className="font-sans">
+      
+      
+        {SITE_FEATURES.analytics && <AnalyticsHead />}
+        {SITE_FEATURES.advertising && <AdsHead />}
+      </head>
+      <body>  {/* 移除 inter.className */}
+     
+
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          enableSystem
+          defaultTheme={SITE_THEME.defaultMode}
+          enableSystem={false}
           disableTransitionOnChange
         >
-          <div className="flex flex-col min-h-screen bg-green-50 dark:bg-green-900">
-            <Navbar />
+          <div
+            className="site-shell flex min-h-screen flex-col"
+            style={SITE_THEME_STYLE}
+          >
+            <SiteNavbar />
+            {SITE_FEATURES.activityFeed && <SiteActivityFeed />}
             <main className="flex-grow">
               {children}
             </main>
-            <Footer />
+            <SiteFooter />
           </div>
+          {SITE_FEATURES.feedback && <SiteFeedbackWidget />}
         </ThemeProvider>
       </body>
     </html>

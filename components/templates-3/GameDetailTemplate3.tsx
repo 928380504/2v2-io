@@ -1,18 +1,24 @@
 "use client";
 
-import { useMemo } from 'react';
-import { GameSection } from './GameSection3';
-import { RelatedGames } from './RelatedGames3';
-// 移除 GameCategories3 导入
-import { GameSideListZ } from './GameSideList-z3';
-import { GameSideListY } from './GameSideList-y3';
-import { GameIntro2 } from './GameIntro3';
 import { ContentSection } from '@/components/ContentSection';
 import { STYLES } from '@/styles/constants';
-import { Game, gameCategories } from '@/config/games';
+import { Game } from '@/config/game-catalog';
 import { HotYouxi } from '@/components/YouXi/Game-Fang';
-import { RelatedGames as RelatedGamesMain } from '@/components/YouXi/Games-Related';
+import { DisplayAdSlot } from '@/components/All/DisplayAdSlot';
+import { GameStructuredData } from '@/components/All/GameStructuredData';
+import { GameArticleNav } from './GameArticleNav3';
+import {
+  SiteGameArticle,
+  SiteGamePlayer,
+  SiteGameRankingPanel,
+  SiteRelatedGames,
+} from '@/components/slots';
 import type { ReactNode } from 'react';
+import { getPrimaryGameAttributeValues } from '@/config/game-filters';
+import { SITE_FEATURES } from '@/config/features';
+import { SITE_ROUTES } from '@/config/routes';
+import { isGameRankingEligible } from '@/config/popular-games';
+import { SquareGameRecommendations } from './SquareGameRecommendations';
 
 interface ExtendedGame extends Game {
   playUrl: string;
@@ -23,101 +29,142 @@ interface ExtendedGame extends Game {
 interface GameDetailTemplate3Props {
   game: ExtendedGame;
   relatedGames: Game[];
-  sideGamesZ: Game[];
   sideGamesY: Game[];
   videoComponent?: ReactNode;
+  youtubeComponent?: ReactNode;
   description?: string;
 }
 
 export function GameDetailTemplate3({
   game,
-  relatedGames: initialRelatedGames,
-  sideGamesZ,
+  relatedGames,
   sideGamesY,
   videoComponent,
+  youtubeComponent,
   description
 }: GameDetailTemplate3Props) {
-
-  // 获取同类游戏作为相关游戏
-  const relatedGames = useMemo(() => {
-    // 找到当前游戏所属的分类
-    const currentCategory = gameCategories.find(category => 
-      category.games.some(g => g.id === game.id)
-    );
-
-    if (currentCategory) {
-      // 从同一分类中获取其他游戏
-      return currentCategory.games
-        .filter(g => g.id !== game.id) // 排除当前游戏
-        .map(g => ({
-          ...g,
-          category: currentCategory.title,
-          categoryUrl: currentCategory.path,
-          // 添加默认的预览图，如果没有视频则使用游戏的背景图
-          previewUrl: g.videoUrl || g.image
-        }));
-    }
-
-    // 如果找不到分类，则使用传入的相关游戏，同样添加预览图
-    return initialRelatedGames.map(g => ({
-      ...g,
-      previewUrl: g.videoUrl || g.image
-    }));
-  }, [game.id, initialRelatedGames]);
+  const rightSidebarGames = relatedGames
+    .filter((relatedGame) =>
+      relatedGame.id !== game.id && isGameRankingEligible(relatedGame.id)
+    )
+    .slice(0, 4);
+  const rightSidebarGameIds = rightSidebarGames.map((relatedGame) => relatedGame.id);
+  const leftSidebarGames = sideGamesY
+    .filter((sideGame) =>
+      sideGame.id !== game.id &&
+      !rightSidebarGameIds.includes(sideGame.id) &&
+      isGameRankingEligible(sideGame.id)
+    )
+    .slice(0, 2);
 
   return (
     <main>
+      <GameStructuredData game={game} />
       {/* 游戏区域 */}
       <ContentSection 
         id="game" 
-        className="py-4" 
+        className="px-3 py-3"
         style={STYLES.container}
       >
-        <div className="max-w-[980px] mx-auto">
-          <div className="flex flex-col xl:flex-row gap-4">
-            <div className="w-full xl:flex-1">
-              <GameSection 
-                game={game}
-                height="500px"
-                className="w-full"
+        <div className="site-container-width mx-auto">
+          <div className="grid grid-cols-1 gap-y-3 min-[1200px]:grid-cols-[minmax(0,4fr)_minmax(0,1fr)] min-[1200px]:gap-x-0">
+            <SiteGamePlayer
+              game={game}
+              aspectRatio="16 / 9"
+              className="w-full"
+            />
+
+            <div className="relative hidden min-h-0 min-[1200px]:block">
+              <SiteGameRankingPanel
+                games={[game, ...relatedGames]}
+                currentGameId={game.id}
+                className="absolute inset-0"
               />
             </div>
-           
+
+            {SITE_FEATURES.advertising && (
+              <DisplayAdSlot
+                placement="gameBelow"
+                className="min-[1200px]:col-span-2"
+              />
+            )}
+
+            <div className="min-[1200px]:col-span-2">
+              <SiteRelatedGames
+                games={relatedGames.map((relatedGame) => ({
+                  ...relatedGame,
+                  image: relatedGame.image.replace('-logo.webp', '-bj.webp'),
+                }))}
+              />
+            </div>
           </div>
         </div>
       </ContentSection>
-      
+        {/* 热门游戏区域 */}
+        <div className="site-container-width mx-auto mb-4 min-[1200px]:hidden">
+          <HotYouxi />
+        </div>
       {/* 内容区域 */}
       <ContentSection className="pb-8" style={STYLES.container}>
-        <div className="max-w-[980px] mx-auto mb-8">
-          <div className="grid grid-cols-1 lg:grid-cols-[195px_1fr_195px] gap-4">
+        <div className="site-container-width mx-auto mb-8">
+          <div className="grid grid-cols-1 min-[1200px]:grid-cols-[20%_60%_20%]">
             {/* 左侧游戏列表 */}
-            <aside className="hidden lg:block">
-              <div className="sticky top-4">
-                <GameSideListZ games={sideGamesZ} />
+            <aside className="hidden min-[1200px]:block min-[1200px]:pr-2 min-[1536px]:pr-4">
+              <div className="sticky top-4 space-y-3">
+                {SITE_FEATURES.advertising ? (
+                  <DisplayAdSlot
+                    placement="detailSide"
+                    variant="vertical"
+                  />
+                ) : null}
+                <SquareGameRecommendations
+                  games={leftSidebarGames}
+                  currentGameId={game.id}
+                  excludeGameIds={rightSidebarGameIds}
+                  limit={2}
+                  ariaLabel="More recommended games"
+                  className="hidden min-[1440px]:block"
+                />
               </div>
             </aside>
 
             {/* 中间内容 */}
             <div>
-              <GameIntro2 
+              <SiteGameArticle 
+                gameId={game.id}
                 title={game.title}
                 description={description || game.description || ""}
                 categories={[
-                  { name: "Clicker Games", href: "/clicker-games" },
-                  { name: game.category || "Incremental Games", href: game.categoryUrl || "/clicker-games/incremental-clicker-games" }
+                  { name: game.category || "Games", href: game.categoryUrl || SITE_ROUTES.gameCategory }
                 ]}
-                rating={{ score: game.rating || 4.5, votes: 1234 }}
-                views={50000}
-                createdAt={game.createdAt}
+                similarityAttributes={getPrimaryGameAttributeValues(game)}
+                rating={{ score: game.rating || 4.5, votes: game.ratingCount ?? 0 }}
+                logoImage={game.image}
+                developer={game.developer}
+                siteAddedAt={game.siteAddedAt}
+                technology={game.technology}
+                platforms={game.platforms}
                 videoComponent={videoComponent}
+                youtubeComponent={youtubeComponent}
+                relatedGames={relatedGames}
               />
             </div>
 
             {/* 右侧游戏列表 */}
-            <aside className="hidden lg:block">
-              <div className="sticky top-4">
-                <GameSideListY games={sideGamesY} />
+            <aside className="hidden min-[1200px]:block min-[1200px]:pl-2 min-[1536px]:pl-4">
+              <div className="sticky top-4 space-y-3">
+                <GameArticleNav
+                  hasVideo={Boolean(youtubeComponent)}
+                  hasSimilarGames={relatedGames.length > 0}
+                  hasComments={SITE_FEATURES.comments}
+                />
+                <SquareGameRecommendations
+                  games={rightSidebarGames}
+                  currentGameId={game.id}
+                  limit={4}
+                  ariaLabel="Recommended games below the article navigation"
+                  className="hidden min-[1440px]:block"
+                />
               </div>
             </aside>
           </div>

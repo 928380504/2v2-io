@@ -1,73 +1,200 @@
-"use client";
-
-import { STYLES } from "@/styles/constants";
+import { DisplayAdSlot } from "@/components/All/DisplayAdSlot";
+import { GameStructuredData } from "@/components/All/GameStructuredData";
 import { ContentSection } from "@/components/ContentSection";
 import { VideoPlayer } from "@/components/sj/VideoPlayer";
-import { Creators } from "@/components/sj/Creators";
-import { Reviews } from "@/components/sj/Reviews";
-import { Title } from "@/components/TxT/what";
-import { GameSection } from "@/components/YouXi/Game-IF";
-import { HowToPlay } from "@/components/TxT/how";
-import { Features } from "@/components/TxT/why";
-import { Faq } from "@/components/TxT/Faq";
-import { RelatedGames } from "@/components/YouXi/Games-Related";
-import { GameIntro } from "@/components/TxT/Intro";
+import { GameArticleNav } from "@/components/templates-3/GameArticleNav3";
+import { GameSideListY } from "@/components/templates-3/GameSideList-y3";
+import { SquareGameRecommendations } from "@/components/templates-3/SquareGameRecommendations";
+import {
+  SiteFriendLinks,
+  SiteGameArticle,
+  SiteGamePlayer,
+  SiteGameRankingPanel,
+  SiteLeaderboard,
+  SiteRelatedGames,
+} from "@/components/slots";
+import { SITE_FEATURES } from "@/config/features";
+import { getGame, getGamePageContext } from "@/config/game-catalog";
+import { SITE_CONFIG, siteUrl } from "@/config/site";
+import { getPrimaryGameAttributeValues } from "@/config/game-filters";
+import { isGameRankingEligible } from "@/config/popular-games";
+import { HOME_PAGE } from "@/site/content/home-page";
+import { STYLES } from "@/styles/constants";
 
-import { LinkFooter } from "@/components/link-footer"
+const homepageUrl = siteUrl();
+const homepageGameEntityId = `${homepageUrl}#game`;
+const homepageStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${SITE_CONFIG.url}/#webpage`,
+  url: homepageUrl,
+  name: SITE_CONFIG.seo.title,
+  mainEntity: {
+    "@id": homepageGameEntityId,
+  },
+  primaryImageOfPage: {
+    "@type": "ImageObject",
+    url: siteUrl(SITE_CONFIG.assets.logo),
+    contentUrl: siteUrl(SITE_CONFIG.assets.logo),
+    width: 100,
+    height: 100,
+    caption: HOME_PAGE.structuredImageCaption,
+  },
+};
+
 export default function Home() {
+  const pageContext = getGamePageContext(SITE_CONFIG.primaryGameId);
+  if (!pageContext) return null;
+
+  const { game, category, detail, playableGame, relatedGames } = pageContext;
+  const homeRelatedGames = HOME_PAGE.player.relatedGameIds.flatMap((gameId) => {
+    const relatedGame = getGame(gameId);
+    return relatedGame
+      ? [{ ...relatedGame, image: relatedGame.detail.coverImage }]
+      : [];
+  });
+  const homepageSidebarGames = category.games.filter(
+    (sidebarGame) =>
+      sidebarGame.id !== game.id && isGameRankingEligible(sidebarGame.id),
+  );
+  const rightSidebarGames = homepageSidebarGames.slice(0, 4);
+  const rightSidebarGameIds = rightSidebarGames.map(
+    (sidebarGame) => sidebarGame.id,
+  );
+  const leftSidebarGames = homepageSidebarGames
+    .filter((sidebarGame) => !rightSidebarGameIds.includes(sidebarGame.id))
+    .slice(0, 2);
+
   return (
     <>
-      {/* 额外的 Schema.org microdata 格式 */}
-      <div style={{ position: 'absolute', left: '-9999px' }} itemScope itemType="http://schema.org/Game">
-        <span itemProp="name">2v2.io</span>
-        <div itemProp="aggregateRating" itemScope itemType="http://schema.org/AggregateRating">
-          <span itemProp="ratingValue">4.9</span>
-          <span itemProp="bestRating">5</span>
-          <span itemProp="worstRating">1</span>
-          <span itemProp="ratingCount">1658</span>
-        </div>
-      </div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(homepageStructuredData).replace(/</g, "\\u003c"),
+        }}
+      />
+      <GameStructuredData game={game} pageUrl={homepageUrl} />
 
-      <ContentSection 
-        id="game" 
-        className="px-2 py-2" 
+      <ContentSection
+        id="game"
+        className="px-3 py-3"
         style={STYLES.container}
       >
-        <div className="max-w-[980px] mx-auto">
-          <div className="flex flex-col xl:flex-row gap-4">
-            <div className="w-full xl:flex-1">
-              <GameSection 
-                gameUrl="https://game.1v1-lol.cc/1v1-lol-games/2v2-io/2v2-io.html"
-                height="500px"
-                className="w-full"
-              />
-            </div>
-           
-          </div>
-        </div>
-      </ContentSection>
-
-      <div className="h-24"></div>
-
-      <ContentSection className="px-4" style={STYLES.container}>
-        <div className="max-w-[1200px] mx-auto space-y-24">
-          <Title />
-          <GameIntro />
-          <Features />
-          <HowToPlay />
-          <div id="youtube" className="w-full max-w-4xl mx-auto">
-            <VideoPlayer 
-              videoId="0sIH1sUAQ0o"
-              title="2v2.io"
-              description="Watch and learn the best strategies to maximize your space exploration!"
+        <div className="site-container-width mx-auto">
+          <div className="grid grid-cols-1 gap-y-3 min-[1200px]:grid-cols-[minmax(0,4fr)_minmax(0,1fr)] min-[1200px]:gap-x-0">
+            <SiteGamePlayer
+              game={playableGame}
+              backgroundImage={HOME_PAGE.player.backgroundImage}
+              coverTagline={HOME_PAGE.player.coverTagline}
+              aspectRatio="16 / 9"
               className="w-full"
             />
+
+            <div className="relative hidden min-h-0 min-[1200px]:block">
+              {SITE_FEATURES.leaderboard ? (
+                <SiteLeaderboard className="absolute inset-0 flex" />
+              ) : (
+                <SiteGameRankingPanel
+                  games={category.games}
+                  currentGameId={game.id}
+                  className="absolute inset-0"
+                />
+              )}
+            </div>
+
+            {SITE_FEATURES.advertising && (
+              <DisplayAdSlot
+                placement="gameBelow"
+                className="min-[1200px]:col-span-2"
+              />
+            )}
+
+            <div className="min-[1200px]:col-span-2">
+              <SiteRelatedGames games={homeRelatedGames} />
+            </div>
           </div>
-          <Reviews />
-          <Faq />
         </div>
       </ContentSection>
-      <LinkFooter />
+
+      <div className="h-17" />
+
+      <ContentSection className="pb-8" style={STYLES.container}>
+        <div className="site-container-width mx-auto mb-8">
+          <div className="grid grid-cols-1 min-[1200px]:grid-cols-[20%_60%_20%]">
+            <aside className="hidden min-[1200px]:block min-[1200px]:pr-2 min-[1536px]:pr-4">
+              <div className="sticky top-4 space-y-3">
+                {SITE_FEATURES.advertising ? (
+                  <DisplayAdSlot
+                    placement="homeSide"
+                    variant="vertical"
+                    fallback={<GameSideListY games={[]} />}
+                  />
+                ) : (
+                  <GameSideListY games={[]} />
+                )}
+                <SquareGameRecommendations
+                  games={leftSidebarGames}
+                  currentGameId={game.id}
+                  excludeGameIds={rightSidebarGameIds}
+                  limit={2}
+                  ariaLabel="More recommended games"
+                  className="hidden min-[1440px]:block"
+                />
+              </div>
+            </aside>
+
+            <div>
+              <SiteGameArticle
+                gameId={game.id}
+                title={game.title}
+                description={HOME_PAGE.article.description}
+                categories={[{ name: category.title, href: category.path }]}
+                similarityAttributes={getPrimaryGameAttributeValues(game)}
+                rating={{ score: game.rating || 4.5, votes: game.ratingCount ?? 0 }}
+                logoImage={game.image}
+                developer={game.developer}
+                siteAddedAt={game.siteAddedAt}
+                technology={game.technology}
+                platforms={game.platforms}
+                videoComponent={
+                  <img
+                    src={detail.coverImage}
+                    alt={HOME_PAGE.article.heroAlt}
+                  />
+                }
+                youtubeComponent={
+                  <VideoPlayer
+                    videoId={HOME_PAGE.article.youtube.videoId}
+                    title={HOME_PAGE.article.youtube.title}
+                    description={HOME_PAGE.article.youtube.description}
+                  />
+                }
+                relatedGames={relatedGames}
+                faqItems={HOME_PAGE.article.faqItems.map((item) => ({ ...item }))}
+              />
+            </div>
+
+            <aside className="hidden min-[1200px]:block min-[1200px]:pl-2 min-[1536px]:pl-4">
+              <div className="sticky top-4 space-y-3">
+                <GameArticleNav
+                  hasVideo
+                  hasSimilarGames={category.games.length > 1}
+                  hasComments={SITE_FEATURES.comments}
+                />
+                <SquareGameRecommendations
+                  games={rightSidebarGames}
+                  currentGameId={game.id}
+                  limit={4}
+                  ariaLabel="Recommended games below the article navigation"
+                  className="hidden min-[1440px]:block"
+                />
+              </div>
+            </aside>
+          </div>
+        </div>
+      </ContentSection>
+
+      {SITE_FEATURES.friendLinks && <SiteFriendLinks />}
     </>
   );
 }

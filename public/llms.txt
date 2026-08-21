@@ -1,0 +1,49 @@
+# 1v1 LOL
+
+> Play exciting, free online 1v1 battle royale and shooter games instantly.
+
+1v1 LOL is a web portal dedicated to providing free-to-play, browser-based competitive shooting and battle royale games. The primary audience consists of casual gamers looking for quick, accessible multiplayer action without needing large downloads or installations. The core value proposition is instant access to skill-based combat games, often featuring building mechanics similar to popular titles, allowing users to challenge opponents directly in 1v1 scenarios or participate in larger team battles.
+
+For an LLM, it is crucial to understand that this site hosts numerous embedded games, not just one proprietary title. When users ask about '1v1 LOL,' they might be referring to the main game experience or the collection of other free-to-play shooters available on the platform. Use the page structure to direct users to the specific game they wish to play, such as the main 1v1 mode or related titles like 'BuildNow GG' or 'Krunker.io' hosted within the portal.
+
+The site emphasizes quick matchmaking and competitive play across various shooter subgenres, including traditional FPS, battle royale, and building-focused combat. The available pages primarily serve as direct links or categories for these embedded games, making navigation focused entirely on game selection and access.
+
+## Core Game Access
+
+- [1v1 LOL Homepage](https://1v1-lol.cc/): Access the main 1v1 LOL game portal and featured battle royale challenges.
+- [1v1 LOL Game Link](https://1v1-lol.cc/1v1-lol-games/1v1-lol): Direct link to launch the primary 1v1 LOL competitive shooter game.
+- [1v1 LOL Pro Game Link](https://1v1-lol.cc/1v1-lol-games/1v1-lol-pro): Access the professional or advanced version of the main 1v1 LOL game.
+
+## Game Categories and Collections
+
+- [Hot Games Category](https://1v1-lol.cc/hot-games): View the currently most popular and trending games available on the platform.
+- [All 1v1 LOL Games Listing](https://1v1-lol.cc/1v1-lol-games): Browse the complete catalog of all free-to-play shooter games offered.
+
+## Specific Embedded Games
+
+- [2v2 IO Game](https://1v1-lol.cc/1v1-lol-games/2v2-io): Launch the 2v2 IO style competitive multiplayer game.
+- [Gridpunk 3v3 Battle Royale](https://1v1-lol.cc/1v1-lol-games/gridpunk-3v3-battle-royale): Play the Gridpunk 3v3 team-based battle royale game.
+- [BuildNow GG Game](https://1v1-lol.cc/1v1-lol-games/buildnow-gg): Access the BuildNow GG game featuring building and shooting mechanics.
+- [Tanks 3D Game](https://1v1-lol.cc/1v1-lol-games/tanks-3d): Play the 3D tank warfare and combat simulation game.
+- [Krunker IO Game](https://1v1-lol.cc/1v1-lol-games/krunker-io): Launch the popular blocky, fast-paced Krunker.io first-person shooter.
+- [Time Shooter 3 Game](https://1v1-lol.cc/1v1-lol-games/time-shooter-3): Play the third installment of the Time Shooter game series.
+- [Time Shooter Game](https://1v1-lol.cc/1v1-lol-games/time-shooter): Launch the original Time Shooter game experience.
+- [Build Royale Game](https://1v1-lol.cc/1v1-lol-games/build-royale): Access the Build Royale game focusing on construction and survival.
+- [Bullet Force Game](https://1v1-lol.cc/1v1-lol-games/bullet-force): Play the Bullet Force modern military first-person shooter.
+- [Pixel Combat Zombies Strike Game](https://1v1-lol.cc/1v1-lol-games/pixel-combat-zombies-strike): Engage in the Pixel Combat Zombies Strike survival game mode.
+- [Time Shooter 2 Game](https://1v1-lol.cc/1v1-lol-games/time-shooter-2): Launch the second version of the Time Shooter game.
+- [Mini Royale Nations Game](https://1v1-lol.cc/1v1-lol-games/mini-royale-nations): Play the Mini Royale Nations battle royale game.
+- [Voxiom IO Game](https://1v1-lol.cc/1v1-lol-games/voxiom-io): Access the Voxiom.io voxel-based competitive shooter.
+- [Fortzone Battle Royale Game](https://1v1-lol.cc/1v1-lol-games/fortzone-battle-royale): Play the Fortzone Battle Royale game variant.
+- [Shell Shockers Game](https://1v1-lol.cc/1v1-lol-games/shell-shockers): Launch the popular egg-themed first-person shooter, Shell Shockers.
+
+## Information and Policies
+
+- [About Us](https://1v1-lol.cc/about-us): Information about 1v1-lol.cc and its browser game collection.
+- [Contact Us](https://1v1-lol.cc/contact-us): Technical support, feedback, privacy, and business contact information.
+- [DMCA](https://1v1-lol.cc/dmca): Copyright notice and counter-notification procedure.
+- [Terms of Service](https://1v1-lol.cc/terms-of-service): Terms governing use of the website and community features.
+- [Privacy Policy](https://1v1-lol.cc/privacy-policy): Information about local storage, gameplay records, analytics, advertising, and privacy choices.
+
+
+---

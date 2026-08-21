@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "sites": [
+    {
+      "id": "example-game",
+      "name": "Example Game",
+      "path": "H:\\path\\to\\example-game-site",
+      "enabled": true
+    }
+  ]
+}

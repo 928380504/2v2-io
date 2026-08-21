@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "1v1-lol",
+  "displayName": "1v1 match wins",
+  "adapterId": "1v1-lol",
+  "gameId": "1v1-lol",
+  "modeKey": "1v1",
+  "eventSchemaVersion": 3,
+  "migration": null,
+  "competition": {
+    "mode": "1v1",
+    "metricField": "wins",
+    "previousPeriodMetricField": "previousDayWins",
+    "metricLabel": "WINS",
+    "metricSingular": "win",
+    "metricPlural": "wins",
+    "previousPeriodLabel": "yesterday",
+    "previousPodiumPlaceholder": "Yesterday's podium · 0 wins today",
+    "activity": {
+      "resultType": "live",
+      "streakType": "streak",
+      "rankingType": "arena",
+      "resultBadge": "LIVE",
+      "streakBadge": "STREAK",
+      "rankingBadge": "ARENA",
+      "waitingText": "Waiting for the next 1v1 result…",
+      "resultVerb": "defeated",
+      "defaultOpponent": "an opponent",
+      "defaultModeLabel": "1v1 Casual",
+      "streakNoun": "win streak",
+      "streakFallbackLabel": "Streak Milestone",
+      "rankingFallbackLabel": "Challenger",
+      "revengeAchievementKey": "sweet_revenge",
+      "revengeText": "sweet revenge!"
+    }
+  }
+}
+

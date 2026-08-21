@@ -1,0 +1,34 @@
+{
+  "analytics": {
+    "enabled": false,
+    "googleAnalytics": {
+      "enabled": false,
+      "measurementId": ""
+    },
+    "clarity": {
+      "enabled": false,
+      "projectId": ""
+    },
+    "customScripts": []
+  },
+  "ads": {
+    "enabled": false,
+    "googleAdsense": {
+      "enabled": false,
+      "clientId": ""
+    },
+    "displayAdUnits": {},
+    "customAdScripts": [],
+    "adsterra": {
+      "enabled": false,
+      "entries": []
+    },
+    "monetag": {
+      "entries": []
+    }
+  },
+  "friendLinks": {
+    "enabled": false,
+    "outbound": []
+  }
+}

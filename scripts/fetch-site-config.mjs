@@ -16,11 +16,36 @@ const CONFIG_OWNER = process.env.CONFIG_OWNER
 const CONFIG_NAME = process.env.CONFIG_NAME
 const CONFIG_BRANCH = process.env.CONFIG_BRANCH || "main"
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN
+const outputPath = path.join(
+  process.cwd(),
+  "site",
+  "generated",
+  "site.generated.json"
+)
 
 async function main() {
-  if (!SITE_ID) throw new Error("Missing SITE_ID")
-  if (!CONFIG_OWNER) throw new Error("Missing CONFIG_OWNER")
-  if (!CONFIG_NAME) throw new Error("Missing CONFIG_NAME")
+  const requiredConfig = {
+    SITE_ID,
+    CONFIG_OWNER,
+    CONFIG_NAME
+  }
+  const missingConfig = Object.entries(requiredConfig)
+    .filter(([, value]) => !value)
+    .map(([key]) => key)
+  const hasRemoteConfig = missingConfig.length === 0
+  const hasPartialRemoteConfig = Object.values(requiredConfig).some(Boolean)
+
+  if (!hasRemoteConfig) {
+    if (!hasPartialRemoteConfig && fs.existsSync(outputPath)) {
+      console.log("Remote site config is not configured; using existing site.generated.json")
+      return
+    }
+
+    throw new Error(
+      `Missing site config: ${missingConfig.join(", ")}. ` +
+      "Set all remote config variables or provide site/generated/site.generated.json."
+    )
+  }
 
   const url = `https://api.github.com/repos/${CONFIG_OWNER}/${CONFIG_NAME}/contents/sites/${SITE_ID}.json?ref=${CONFIG_BRANCH}`
 
@@ -46,13 +71,6 @@ async function main() {
   const file = await res.json()
   const jsonString = Buffer.from(file.content, "base64").toString("utf-8")
   const config = JSON.parse(jsonString)
-
-  const outputPath = path.join(
-    process.cwd(),
-    "src",
-    "config",
-    "site.generated.json"
-  )
 
   fs.mkdirSync(path.dirname(outputPath), {
     recursive: true

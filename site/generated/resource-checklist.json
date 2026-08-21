@@ -1,0 +1,188 @@
+{
+  "schemaVersion": 1,
+  "note": "site:create never downloads or invents licensed assets. Supply every missing local resource before apply/build.",
+  "resources": [
+    {
+      "kind": "gameOrigin",
+      "owner": "site",
+      "value": "https://mt.free-online-games.co",
+      "source": "remote",
+      "status": "external"
+    },
+    {
+      "kind": "logo",
+      "owner": "site",
+      "value": "https://2v2-io.com/2v2-io-logo.webp",
+      "source": "remote",
+      "status": "external"
+    },
+    {
+      "kind": "navigationLogo",
+      "owner": "site",
+      "value": "https://2v2-io.com/2v2-io-logo.webp",
+      "source": "remote",
+      "status": "external"
+    },
+    {
+      "kind": "favicon",
+      "owner": "site",
+      "value": "/favicon.ico",
+      "source": "public",
+      "status": "present"
+    },
+    {
+      "kind": "homeBackground",
+      "owner": "home",
+      "value": "/2v2-io-bj.webp",
+      "source": "public",
+      "status": "present"
+    },
+    {
+      "kind": "logo",
+      "owner": "2v2-io",
+      "value": "/2v2-io-logo.webp",
+      "source": "public",
+      "status": "present"
+    },
+    {
+      "kind": "cover",
+      "owner": "2v2-io",
+      "value": "/2v2-io-bj.webp",
+      "source": "public",
+      "status": "present"
+    },
+    {
+      "kind": "playUrl",
+      "owner": "2v2-io",
+      "value": "https://game.1v1-lol.cc/1v1-lol-games/2v2-io/2v2-io.html",
+      "source": "remote",
+      "status": "external"
+    },
+    {
+      "kind": "logo",
+      "owner": "planet-clicker",
+      "value": "/planet-clicker-logo.webp",
+      "source": "public",
+      "status": "present"
+    },
+    {
+      "kind": "cover",
+      "owner": "planet-clicker",
+      "value": "/planet-clicker-bj.webp",
+      "source": "public",
+      "status": "present"
+    },
+    {
+      "kind": "playUrl",
+      "owner": "planet-clicker",
+      "value": "sci-fi-clicker-games/planet-clicker/index.html",
+      "source": "game-origin",
+      "status": "external"
+    },
+    {
+      "kind": "logo",
+      "owner": "planet-clicker-2",
+      "value": "/planet-clicker-2-logo.webp",
+      "source": "public",
+      "status": "present"
+    },
+    {
+      "kind": "cover",
+      "owner": "planet-clicker-2",
+      "value": "/planet-clicker-2-bj.webp",
+      "source": "public",
+      "status": "present"
+    },
+    {
+      "kind": "playUrl",
+      "owner": "planet-clicker-2",
+      "value": "sci-fi-clicker-games/planet-clicker-2/index.html",
+      "source": "game-origin",
+      "status": "external"
+    },
+    {
+      "kind": "logo",
+      "owner": "planet-clicker-unlocked",
+      "value": "https://mt.free-online-games.co/planet-clicker-game/planet-clicker-unlocked/planet-clicker-unlocked-logo.webp",
+      "source": "remote",
+      "status": "external"
+    },
+    {
+      "kind": "cover",
+      "owner": "planet-clicker-unlocked",
+      "value": "https://mt.free-online-games.co/planet-clicker-game/planet-clicker-unlocked/planet-clicker-unlocked-bj.webp",
+      "source": "remote",
+      "status": "external"
+    },
+    {
+      "kind": "playUrl",
+      "owner": "planet-clicker-unlocked",
+      "value": "sci-fi-clicker-games/planet-clicker-unlocked/index.html",
+      "source": "game-origin",
+      "status": "external"
+    },
+    {
+      "kind": "logo",
+      "owner": "planet-clicker-pro",
+      "value": "https://mt.free-online-games.co/planet-clicker-game/planet-clicker-pro/planet-clicker-pro-logo.webp",
+      "source": "remote",
+      "status": "external"
+    },
+    {
+      "kind": "cover",
+      "owner": "planet-clicker-pro",
+      "value": "https://mt.free-online-games.co/planet-clicker-game/planet-clicker-pro/planet-clicker-pro-bj.webp",
+      "source": "remote",
+      "status": "external"
+    },
+    {
+      "kind": "playUrl",
+      "owner": "planet-clicker-pro",
+      "value": "sci-fi-clicker-games/planet-clicker-pro/index.html",
+      "source": "game-origin",
+      "status": "external"
+    },
+    {
+      "kind": "logo",
+      "owner": "planet-clicker-2019",
+      "value": "https://mt.free-online-games.co/planet-clicker-game/planet-clicker-2019/planet-clicker-2019-logo.webp",
+      "source": "remote",
+      "status": "external"
+    },
+    {
+      "kind": "cover",
+      "owner": "planet-clicker-2019",
+      "value": "https://mt.free-online-games.co/planet-clicker-game/planet-clicker-2019/planet-clicker-2019-bj.webp",
+      "source": "remote",
+      "status": "external"
+    },
+    {
+      "kind": "playUrl",
+      "owner": "planet-clicker-2019",
+      "value": "sci-fi-clicker-games/planet-clicker-2019/index.html",
+      "source": "game-origin",
+      "status": "external"
+    },
+    {
+      "kind": "logo",
+      "owner": "planet-clicker-2022",
+      "value": "https://mt.free-online-games.co/planet-clicker-game/planet-clicker-2022/planet-clicker-2022-logo.webp",
+      "source": "remote",
+      "status": "external"
+    },
+    {
+      "kind": "cover",
+      "owner": "planet-clicker-2022",
+      "value": "https://mt.free-online-games.co/planet-clicker-game/planet-clicker-2022/planet-clicker-2022-bj.webp",
+      "source": "remote",
+      "status": "external"
+    },
+    {
+      "kind": "playUrl",
+      "owner": "planet-clicker-2022",
+      "value": "sci-fi-clicker-games/planet-clicker-2022/index.html",
+      "source": "game-origin",
+      "status": "external"
+    }
+  ]
+}

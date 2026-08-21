@@ -16,7 +16,7 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "incremental": true,
     "plugins": [
       {
@@ -35,9 +35,11 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "out/types/**/*.ts",
-    "out/types/**/*.ts"
+    ".next/dev/types/**/*.ts"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "backups",
+    "examples/competition-adapters"
   ]
 }

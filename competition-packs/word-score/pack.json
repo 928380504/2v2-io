@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "id": "word-score",
+  "displayName": "Untimed word-game best score",
+  "adapterId": "word-score",
+  "gameId": "text-twist-2-untimed",
+  "modeKey": "untimed",
+  "eventSchemaVersion": 1,
+  "migration": {
+    "source": "migration.sql",
+    "targetStem": "word_score"
+  },
+  "competition": {
+    "mode": "untimed",
+    "metricField": "bestScore",
+    "previousPeriodMetricField": "previousDayBestScore",
+    "metricLabel": "SCORE",
+    "metricSingular": "point",
+    "metricPlural": "points",
+    "previousPeriodLabel": "yesterday",
+    "previousPodiumPlaceholder": "Yesterday's podium · no score yet",
+    "activity": {
+      "resultType": "live",
+      "streakType": "streak",
+      "rankingType": "arena",
+      "resultBadge": "SCORE",
+      "streakBadge": "STREAK",
+      "rankingBadge": "RANK",
+      "waitingText": "Waiting for the next completed word run…",
+      "resultVerb": "scored",
+      "defaultOpponent": "a new score",
+      "defaultModeLabel": "Text Twist 2 Untimed",
+      "streakNoun": "round streak",
+      "streakFallbackLabel": "Word Streak",
+      "rankingFallbackLabel": "Word Master",
+      "revengeAchievementKey": "",
+      "revengeText": ""
+    }
+  }
+}
+

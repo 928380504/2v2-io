@@ -1,0 +1,111 @@
+{
+  "manifestVersion": 1,
+  "site": {
+    "id": "2v2-io",
+    "name": "2v2.io",
+    "brandName": "2v2-io.com",
+    "domain": "2v2-io.com",
+    "url": "https://2v2-io.com",
+    "language": "en",
+    "locale": "en_US",
+    "email": "js928380504@126.com",
+    "timeZone": "America/New_York",
+    "primaryCategoryId": "sci-fi-clicker-games",
+    "primaryGameId": "2v2-io",
+    "legalLastUpdated": "August 8, 2026",
+    "assets": {
+      "gameOrigin": "https://mt.free-online-games.co",
+      "logo": "https://2v2-io.com/2v2-io-logo.webp",
+      "navigationLogo": "https://2v2-io.com/2v2-io-logo.webp",
+      "favicon": "/favicon.ico"
+    },
+    "seo": {
+      "title": "2v2.io - Play Online for Free!",
+      "description": "2v2.io is a fast-paced battle royale game that fuses sharp shooting with instant building, where you and your teammate fight to be the last squad standing in a shrinking arena.​",
+      "keywords": [
+        "2v2.io"
+      ],
+      "twitterCreator": "@PlanetClicker"
+    },
+    "navigation": {
+      "links": [
+        {
+          "label": "Home",
+          "route": "home"
+        },
+        {
+          "label": "Hot Games",
+          "route": "hotGames"
+        },
+        {
+          "label": "Shooting Games",
+          "route": "gameFilters"
+        }
+      ]
+    },
+    "footer": {
+      "gameIds": [
+        "2v2-io",
+        "planet-clicker",
+        "planet-clicker-2"
+      ]
+    },
+    "integrations": {
+      "makeThisBetterProjectKey": ""
+    }
+  },
+  "routes": {
+    "home": "/",
+    "hotGames": "/hot-games",
+    "gameCategory": "/sci-fi-clicker-games",
+    "gameFilters": "/shooting-games",
+    "legacyTags": "/tags",
+    "aboutUs": "/about-us",
+    "contactUs": "/contact-us",
+    "terms": "/terms-of-service",
+    "privacy": "/privacy-policy",
+    "dmca": "/dmca"
+  },
+  "features": {
+    "activityFeed": false,
+    "leaderboard": false,
+    "comments": true,
+    "ratings": true,
+    "engagement": true,
+    "matchEvents": false,
+    "gameLibrary": true,
+    "feedback": false,
+    "analytics": true,
+    "advertising": true,
+    "friendLinks": true
+  },
+  "theme": {
+    "defaultMode": "light",
+    "layout": {
+      "listMaxWidth": "1200px",
+      "gameBaseMaxWidth": "1180px",
+      "gameDesktopWidth": "70vw",
+      "gameDesktopMaxWidth": "1574px"
+    },
+    "colors": {
+      "pageLight": "#f0fdf4",
+      "pageDark": "#14532d",
+      "primaryLight": "#15803d",
+      "primaryDark": "#166534"
+    },
+    "feedback": {
+      "light": {
+        "primary": "#15803d",
+        "hover": "#16a34a",
+        "active": "#166534",
+        "onPrimary": "#ffffff"
+      },
+      "dark": {
+        "primary": "#166534",
+        "hover": "#15803d",
+        "active": "#14532d",
+        "onPrimary": "#ffffff"
+      }
+    }
+  }
+}

@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 1,
+  "primaryMatchGroup": "gameplay",
+  "aliases": {
+    "app": "touch",
+    "fps": "pvp",
+    "mobile": "touch",
+    "pc": "keyboard-mouse"
+  },
+  "groups": [
+    {
+      "key": "players",
+      "attributeKey": "playerModes",
+      "generatorKey": "player-modes",
+      "label": "Player Mode",
+      "icon": "players",
+      "multiple": true,
+      "defaultValues": [],
+      "generatorDefaultValues": [
+        "single-player"
+      ],
+      "options": [
+        {
+          "slug": "single-player",
+          "label": "Single Player",
+          "description": "Play single-player shooting games at your own pace without online matchmaking."
+        },
+        {
+          "slug": "multiplayer",
+          "label": "Multiplayer",
+          "description": "Join multiplayer shooting games and compete with other players online.",
+          "tagAliases": [
+            "multiplayer"
+          ]
+        },
+        {
+          "slug": "two-player",
+          "label": "Two Player",
+          "description": "Play head-to-head shooting games designed for two players in the same match.",
+          "tagAliases": [
+            "two player",
+            "2 player"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "controls",
+      "attributeKey": "controls",
+      "generatorKey": "controls",
+      "label": "Controls",
+      "icon": "controls",
+      "multiple": true,
+      "defaultValues": [
+        "keyboard-mouse"
+      ],
+      "generatorDefaultValues": [
+        "keyboard-mouse"
+      ],
+      "options": [
+        {
+          "slug": "touch",
+          "label": "Touch Controls",
+          "description": "Play directly on a phone or tablet using on-screen touch controls without extra hardware.",
+          "tagAliases": [
+            "touch controls",
+            "touch"
+          ]
+        },
+        {
+          "slug": "keyboard-mouse",
+          "label": "Keyboard & Mouse",
+          "description": "Browse games designed for precise aiming and movement with a physical keyboard and mouse."
+        },
+        {
+          "slug": "gamepad",
+          "label": "Gamepad",
+          "description": "Find browser shooting games that support a connected controller or gamepad.",
+          "tagAliases": [
+            "gamepad",
+            "controller"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "loading",
+      "attributeKey": "loadSpeed",
+      "generatorKey": "load-speed",
+      "label": "Load Speed",
+      "icon": "loading",
+      "multiple": false,
+      "defaultValues": [
+        "normal-loading"
+      ],
+      "generatorDefaultValues": [
+        "normal-loading"
+      ],
+      "options": [
+        {
+          "slug": "fast-loading",
+          "label": "Fast",
+          "description": "Games that usually open quickly and are suited to short play sessions."
+        },
+        {
+          "slug": "normal-loading",
+          "label": "Normal",
+          "description": "Games with a typical browser loading time and moderate download size."
+        },
+        {
+          "slug": "slow-loading",
+          "label": "Slow",
+          "description": "Larger games that may need a longer initial wait before play begins."
+        }
+      ]
+    },
+    {
+      "key": "gameplay",
+      "attributeKey": "gameplay",
+      "generatorKey": "gameplay",
+      "label": "Gameplay",
+      "icon": "pvp",
+      "multiple": true,
+      "defaultValues": [],
+      "generatorDefaultValues": [
+        "pvp"
+      ],
+      "options": [
+        {
+          "slug": "pvp",
+          "label": "PvP",
+          "description": "Compete directly against other players in skill-based online battles.",
+          "tagAliases": [
+            "pvp"
+          ]
+        },
+        {
+          "slug": "building",
+          "label": "Building",
+          "description": "Play building shooting games where quick structures and accurate shots work together.",
+          "tagAliases": [
+            "building"
+          ]
+        },
+        {
+          "slug": "battle-royale",
+          "label": "Battle Royale",
+          "description": "Enter battle royale shooting games and compete to become the final survivor.",
+          "tagAliases": [
+            "battle royale"
+          ]
+        },
+        {
+          "slug": "story",
+          "label": "Story",
+          "description": "Play story-driven shooting games focused on solo missions and progression.",
+          "tagAliases": [
+            "story"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "perspective",
+      "attributeKey": "perspective",
+      "generatorKey": "perspective",
+      "label": "Perspective",
+      "icon": "perspective",
+      "multiple": true,
+      "defaultValues": [],
+      "generatorDefaultValues": [
+        "third-person"
+      ],
+      "options": [
+        {
+          "slug": "first-person",
+          "label": "First-Person",
+          "description": "Play shooting games from a first-person view with direct aiming and fast reactions."
+        },
+        {
+          "slug": "third-person",
+          "label": "Third-Person",
+          "description": "Explore third-person shooting games with a wider view of your character and surroundings."
+        },
+        {
+          "slug": "top-down",
+          "label": "Top-Down",
+          "description": "Discover top-down shooting games built around positioning, awareness, and tactical movement."
+        }
+      ]
+    }
+  ]
+}

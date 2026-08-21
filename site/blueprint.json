@@ -1,0 +1,744 @@
+{
+  "schemaVersion": 1,
+  "site": {
+    "id": "2v2-io",
+    "name": "2v2.io",
+    "brandName": "2v2-io.com",
+    "domain": "2v2-io.com",
+    "email": "js928380504@126.com",
+    "timeZone": "America/New_York",
+    "primaryGameId": "2v2-io",
+    "legalLastUpdated": "August 8, 2026",
+    "assets": {
+      "gameOrigin": "https://mt.free-online-games.co",
+      "logo": "https://2v2-io.com/2v2-io-logo.webp",
+      "navigationLogo": "https://2v2-io.com/2v2-io-logo.webp",
+      "favicon": "/favicon.ico"
+    },
+    "seo": {
+      "title": "2v2.io - Play Online for Free!",
+      "description": "2v2.io is a fast-paced battle royale game that fuses sharp shooting with instant building, where you and your teammate fight to be the last squad standing in a shrinking arena.​",
+      "keywords": [
+        "2v2.io"
+      ],
+      "twitterCreator": "@PlanetClicker"
+    },
+    "footerGameIds": [
+      "2v2-io",
+      "planet-clicker",
+      "planet-clicker-2"
+    ],
+    "feedbackProjectKey": ""
+  },
+  "routes": {
+    "categoryPath": "/sci-fi-clicker-games",
+    "filterPath": "/shooting-games",
+    "filterLabel": "Shooting Games"
+  },
+  "category": {
+    "id": "sci-fi-clicker-games",
+    "title": "Sci-Fi Clicker Games",
+    "description": "Discover our collection of addictive clicker games. From candy collecting to planet exploration, find your perfect idle adventure!",
+    "catalogDescription": "Discover our collection of addictive clicker games. From candy collecting to planet exploration, find your perfect idle adventure!",
+    "heading": "Sci-Fi Clicker Games",
+    "metadataTitle": "Sci-Fi Clicker Games - Play Online",
+    "metadataDescription": "Discover our collection of addictive clicker games. From candy collecting to planet exploration, find your perfect idle adventure!",
+    "socialDescription": "Discover our collection of addictive clicker games. From candy collecting to planet exploration, find your perfect idle adventure!",
+    "keywords": "2v2.io"
+  },
+  "filters": {
+    "schemaVersion": 1,
+    "primaryMatchGroup": "gameplay",
+    "aliases": {
+      "app": "touch",
+      "fps": "pvp",
+      "mobile": "touch",
+      "pc": "keyboard-mouse"
+    },
+    "groups": [
+      {
+        "key": "players",
+        "attributeKey": "playerModes",
+        "generatorKey": "player-modes",
+        "label": "Player Mode",
+        "icon": "players",
+        "multiple": true,
+        "defaultValues": [],
+        "generatorDefaultValues": [
+          "single-player"
+        ],
+        "options": [
+          {
+            "slug": "single-player",
+            "label": "Single Player",
+            "description": "Play single-player shooting games at your own pace without online matchmaking."
+          },
+          {
+            "slug": "multiplayer",
+            "label": "Multiplayer",
+            "description": "Join multiplayer shooting games and compete with other players online.",
+            "tagAliases": [
+              "multiplayer"
+            ]
+          },
+          {
+            "slug": "two-player",
+            "label": "Two Player",
+            "description": "Play head-to-head shooting games designed for two players in the same match.",
+            "tagAliases": [
+              "two player",
+              "2 player"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "controls",
+        "attributeKey": "controls",
+        "generatorKey": "controls",
+        "label": "Controls",
+        "icon": "controls",
+        "multiple": true,
+        "defaultValues": [
+          "keyboard-mouse"
+        ],
+        "generatorDefaultValues": [
+          "keyboard-mouse"
+        ],
+        "options": [
+          {
+            "slug": "touch",
+            "label": "Touch Controls",
+            "description": "Play directly on a phone or tablet using on-screen touch controls without extra hardware.",
+            "tagAliases": [
+              "touch controls",
+              "touch"
+            ]
+          },
+          {
+            "slug": "keyboard-mouse",
+            "label": "Keyboard & Mouse",
+            "description": "Browse games designed for precise aiming and movement with a physical keyboard and mouse."
+          },
+          {
+            "slug": "gamepad",
+            "label": "Gamepad",
+            "description": "Find browser shooting games that support a connected controller or gamepad.",
+            "tagAliases": [
+              "gamepad",
+              "controller"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "loading",
+        "attributeKey": "loadSpeed",
+        "generatorKey": "load-speed",
+        "label": "Load Speed",
+        "icon": "loading",
+        "multiple": false,
+        "defaultValues": [
+          "normal-loading"
+        ],
+        "generatorDefaultValues": [
+          "normal-loading"
+        ],
+        "options": [
+          {
+            "slug": "fast-loading",
+            "label": "Fast",
+            "description": "Games that usually open quickly and are suited to short play sessions."
+          },
+          {
+            "slug": "normal-loading",
+            "label": "Normal",
+            "description": "Games with a typical browser loading time and moderate download size."
+          },
+          {
+            "slug": "slow-loading",
+            "label": "Slow",
+            "description": "Larger games that may need a longer initial wait before play begins."
+          }
+        ]
+      },
+      {
+        "key": "gameplay",
+        "attributeKey": "gameplay",
+        "generatorKey": "gameplay",
+        "label": "Gameplay",
+        "icon": "pvp",
+        "multiple": true,
+        "defaultValues": [],
+        "generatorDefaultValues": [
+          "pvp"
+        ],
+        "options": [
+          {
+            "slug": "pvp",
+            "label": "PvP",
+            "description": "Compete directly against other players in skill-based online battles.",
+            "tagAliases": [
+              "pvp"
+            ]
+          },
+          {
+            "slug": "building",
+            "label": "Building",
+            "description": "Play building shooting games where quick structures and accurate shots work together.",
+            "tagAliases": [
+              "building"
+            ]
+          },
+          {
+            "slug": "battle-royale",
+            "label": "Battle Royale",
+            "description": "Enter battle royale shooting games and compete to become the final survivor.",
+            "tagAliases": [
+              "battle royale"
+            ]
+          },
+          {
+            "slug": "story",
+            "label": "Story",
+            "description": "Play story-driven shooting games focused on solo missions and progression.",
+            "tagAliases": [
+              "story"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "perspective",
+        "attributeKey": "perspective",
+        "generatorKey": "perspective",
+        "label": "Perspective",
+        "icon": "perspective",
+        "multiple": true,
+        "defaultValues": [],
+        "generatorDefaultValues": [
+          "third-person"
+        ],
+        "options": [
+          {
+            "slug": "first-person",
+            "label": "First-Person",
+            "description": "Play shooting games from a first-person view with direct aiming and fast reactions."
+          },
+          {
+            "slug": "third-person",
+            "label": "Third-Person",
+            "description": "Explore third-person shooting games with a wider view of your character and surroundings."
+          },
+          {
+            "slug": "top-down",
+            "label": "Top-Down",
+            "description": "Discover top-down shooting games built around positioning, awareness, and tactical movement."
+          }
+        ]
+      }
+    ]
+  },
+  "games": [
+    {
+      "id": "2v2-io",
+      "categoryId": "sci-fi-clicker-games",
+      "title": "2v2.io",
+      "description": "2v2.io is a fast-paced battle royale game that fuses sharp shooting with instant building, where you and your teammate fight to be the last squad standing in a shrinking arena.​",
+      "metadataDescription": "2v2.io is a fast-paced battle royale game that fuses sharp shooting with instant building, where you and your teammate fight to be the last squad standing in a shrinking arena.​",
+      "image": "/2v2-io-logo.webp",
+      "playUrl": "https://game.1v1-lol.cc/1v1-lol-games/2v2-io/2v2-io.html",
+      "coverImage": "/2v2-io-bj.webp",
+      "coverAlt": "2v2.io Background",
+      "developer": "Independent Studio",
+      "technology": "HTML5",
+      "platforms": [
+        "Web Browser"
+      ],
+      "tags": [
+        "PvP",
+        "Building",
+        "Battle Royale"
+      ],
+      "plays": 0,
+      "ratingCount": 0,
+      "favorites": 0,
+      "likes": 0,
+      "siteAddedAt": "2026-05-18",
+      "hot": true,
+      "matchBridge": false,
+      "detailHtml": "<section><h3>About 2v2.io</h3><p>2v2.io is a fast-paced battle royale game that fuses sharp shooting with instant building, where you and your teammate fight to be the last squad standing in a shrinking arena.​</p></section>",
+      "playerModes": [
+        "two-player"
+      ],
+      "controls": [
+        "keyboard-mouse"
+      ],
+      "loadSpeed": "normal-loading",
+      "gameplay": [
+        "pvp",
+        "building",
+        "battle-royale"
+      ],
+      "perspective": [
+        "third-person"
+      ]
+    },
+    {
+      "id": "planet-clicker",
+      "categoryId": "sci-fi-clicker-games",
+      "title": "Planet Clicker",
+      "description": "Planet Clicker is an addictive idle game where you explore planets, upgrade your space fleet, and build your galactic empire. Click your way to success and become the ultimate space explorer!",
+      "metadataDescription": "Planet Clicker is an addictive idle game where you explore planets, upgrade your space fleet, and build your galactic empire. Click your way to success and become the ultimate space explorer!",
+      "image": "/planet-clicker-logo.webp",
+      "playUrl": "sci-fi-clicker-games/planet-clicker/index.html",
+      "coverImage": "/planet-clicker-bj.webp",
+      "coverAlt": "Planet Clicker Background",
+      "developer": "Independent Studio",
+      "technology": "HTML5",
+      "platforms": [
+        "Web Browser"
+      ],
+      "tags": [
+        "Building"
+      ],
+      "plays": 0,
+      "ratingCount": 0,
+      "favorites": 0,
+      "likes": 0,
+      "siteAddedAt": "2026-05-18",
+      "hot": true,
+      "matchBridge": false,
+      "detailHtml": "<section class=\"mb-12\">\n          <h3 class=\"text-2xl font-bold text-gray-900 dark:text-white mb-4\">About Planet Clicker</h3>\n          <p class=\"text-gray-700 dark:text-gray-300\">Planet Clicker is an addictive idle game where you explore planets, upgrade your space fleet, and build your galactic empire. Click your way to success and become the ultimate space explorer!</p>\n        </section>",
+      "playerModes": [
+        "single-player"
+      ],
+      "controls": [
+        "keyboard-mouse"
+      ],
+      "loadSpeed": "normal-loading",
+      "gameplay": [
+        "building"
+      ],
+      "perspective": [
+        "third-person"
+      ]
+    },
+    {
+      "id": "planet-clicker-2",
+      "categoryId": "sci-fi-clicker-games",
+      "title": "Planet Clicker 2",
+      "description": "Experience the enhanced version of Planet Clicker with improved graphics, new features, and more engaging gameplay! Explore new galaxies, upgrade your space fleet, and become the ultimate cosmic explorer in this addictive idle game.",
+      "metadataDescription": "Experience the enhanced version of Planet Clicker with improved graphics, new features, and more engaging gameplay! Explore new galaxies, upgrade your space fleet, and become the ultimate cosmic explorer in this addictive idle game.",
+      "image": "/planet-clicker-2-logo.webp",
+      "playUrl": "sci-fi-clicker-games/planet-clicker-2/index.html",
+      "coverImage": "/planet-clicker-2-bj.webp",
+      "coverAlt": "Planet Clicker 2 Background",
+      "developer": "Independent Studio",
+      "technology": "HTML5",
+      "platforms": [
+        "Web Browser"
+      ],
+      "tags": [
+        "PvP"
+      ],
+      "plays": 0,
+      "ratingCount": 0,
+      "favorites": 0,
+      "likes": 0,
+      "siteAddedAt": "2026-05-18",
+      "hot": true,
+      "matchBridge": false,
+      "detailHtml": "<section class=\"mb-12\">\n          <h3 class=\"text-2xl font-bold text-gray-900 dark:text-white mb-4\">About Planet Clicker 2</h3>\n          <p class=\"text-gray-700 dark:text-gray-300\">Experience the enhanced version of Planet Clicker with improved graphics, new features, and more engaging gameplay! Explore new galaxies, upgrade your space fleet, and become the ultimate cosmic explorer in this addictive idle game.</p>\n        </section>",
+      "playerModes": [
+        "single-player"
+      ],
+      "controls": [
+        "keyboard-mouse"
+      ],
+      "loadSpeed": "normal-loading",
+      "gameplay": [
+        "pvp"
+      ],
+      "perspective": [
+        "third-person"
+      ]
+    },
+    {
+      "id": "planet-clicker-unlocked",
+      "categoryId": "sci-fi-clicker-games",
+      "title": "Planet Clicker Unlocked",
+      "description": "Planet Clicker Unlocked is a modified version of the original Planet Clicker, allowing users to easily unlock in-game features by increasing score acquisition.",
+      "metadataDescription": "Planet Clicker Unlocked is a modified version of the original Planet Clicker, allowing users to easily unlock in-game features by increasing score acquisition.",
+      "image": "https://mt.free-online-games.co/planet-clicker-game/planet-clicker-unlocked/planet-clicker-unlocked-logo.webp",
+      "playUrl": "sci-fi-clicker-games/planet-clicker-unlocked/index.html",
+      "coverImage": "https://mt.free-online-games.co/planet-clicker-game/planet-clicker-unlocked/planet-clicker-unlocked-bj.webp",
+      "coverAlt": "Planet Clicker Unlocked Background",
+      "developer": "Independent Studio",
+      "technology": "HTML5",
+      "platforms": [
+        "Web Browser"
+      ],
+      "tags": [
+        "PvP"
+      ],
+      "plays": 0,
+      "ratingCount": 0,
+      "favorites": 0,
+      "likes": 0,
+      "siteAddedAt": "2026-05-18",
+      "hot": false,
+      "matchBridge": false,
+      "detailHtml": "<section class=\"mb-12\">\n          <h3 class=\"text-2xl font-bold text-gray-900 dark:text-white mb-4\">About Planet Clicker Unlocked</h3>\n          <p class=\"text-gray-700 dark:text-gray-300\">Planet Clicker Unlocked is a modified version of the original Planet Clicker, allowing users to easily unlock in-game features by increasing score acquisition.</p>\n        </section>",
+      "playerModes": [
+        "single-player"
+      ],
+      "controls": [
+        "keyboard-mouse"
+      ],
+      "loadSpeed": "normal-loading",
+      "gameplay": [
+        "pvp"
+      ],
+      "perspective": [
+        "third-person"
+      ]
+    },
+    {
+      "id": "planet-clicker-pro",
+      "categoryId": "sci-fi-clicker-games",
+      "title": "Planet Clicker Pro",
+      "description": "Planet Clicker Pro is an expansion DLC of the original Planet Clicker, featuring additional planets beyond the original content.",
+      "metadataDescription": "Planet Clicker Pro is an expansion DLC of the original Planet Clicker, featuring additional planets beyond the original content.",
+      "image": "https://mt.free-online-games.co/planet-clicker-game/planet-clicker-pro/planet-clicker-pro-logo.webp",
+      "playUrl": "sci-fi-clicker-games/planet-clicker-pro/index.html",
+      "coverImage": "https://mt.free-online-games.co/planet-clicker-game/planet-clicker-pro/planet-clicker-pro-bj.webp",
+      "coverAlt": "Planet Clicker Pro Background",
+      "developer": "Independent Studio",
+      "technology": "HTML5",
+      "platforms": [
+        "Web Browser"
+      ],
+      "tags": [
+        "PvP"
+      ],
+      "plays": 0,
+      "ratingCount": 0,
+      "favorites": 0,
+      "likes": 0,
+      "siteAddedAt": "2026-05-18",
+      "hot": false,
+      "matchBridge": false,
+      "detailHtml": "<section class=\"mb-12\">\n          <h3 class=\"text-2xl font-bold text-gray-900 dark:text-white mb-4\">About Planet Clicker Pro</h3>\n          <p class=\"text-gray-700 dark:text-gray-300\">Planet Clicker Pro is an expansion DLC of the original Planet Clicker, featuring additional planets beyond the original content.</p>\n        </section>",
+      "playerModes": [
+        "single-player"
+      ],
+      "controls": [
+        "keyboard-mouse"
+      ],
+      "loadSpeed": "normal-loading",
+      "gameplay": [
+        "pvp"
+      ],
+      "perspective": [
+        "third-person"
+      ]
+    },
+    {
+      "id": "planet-clicker-2019",
+      "categoryId": "sci-fi-clicker-games",
+      "title": "Planet Clicker 2019",
+      "description": "Planet Clicker 2019 is a pioneering version that predates the original Planet Clicker by a year. With retro graphics and classic gameplay, it ranks as the third most popular game on Scratch and represents the true beginning of the Planet Clicker series.",
+      "metadataDescription": "Planet Clicker 2019 is a pioneering version that predates the original Planet Clicker by a year. With retro graphics and classic gameplay, it ranks as the third most popular game on Scratch and represents the true beginning of the Planet Clicker series.",
+      "image": "https://mt.free-online-games.co/planet-clicker-game/planet-clicker-2019/planet-clicker-2019-logo.webp",
+      "playUrl": "sci-fi-clicker-games/planet-clicker-2019/index.html",
+      "coverImage": "https://mt.free-online-games.co/planet-clicker-game/planet-clicker-2019/planet-clicker-2019-bj.webp",
+      "coverAlt": "Planet Clicker 2019 Background",
+      "developer": "Independent Studio",
+      "technology": "HTML5",
+      "platforms": [
+        "Web Browser"
+      ],
+      "tags": [
+        "PvP"
+      ],
+      "plays": 0,
+      "ratingCount": 0,
+      "favorites": 0,
+      "likes": 0,
+      "siteAddedAt": "2026-05-18",
+      "hot": true,
+      "matchBridge": false,
+      "detailHtml": "<section class=\"mb-12\">\n          <h3 class=\"text-2xl font-bold text-gray-900 dark:text-white mb-4\">About Planet Clicker 2019</h3>\n          <p class=\"text-gray-700 dark:text-gray-300\">Planet Clicker 2019 is a pioneering version that predates the original Planet Clicker by a year. With retro graphics and classic gameplay, it ranks as the third most popular game on Scratch and represents the true beginning of the Planet Clicker series.</p>\n        </section>",
+      "playerModes": [
+        "single-player"
+      ],
+      "controls": [
+        "keyboard-mouse"
+      ],
+      "loadSpeed": "normal-loading",
+      "gameplay": [
+        "pvp"
+      ],
+      "perspective": [
+        "third-person"
+      ]
+    },
+    {
+      "id": "planet-clicker-2022",
+      "categoryId": "sci-fi-clicker-games",
+      "title": "Planet Clicker 2022",
+      "description": "Planet Clicker 2022 is the second most popular Planet Clicker game on Scratch. This unique version offers a distinctly different gameplay experience with innovative mechanics and a dynamic leaderboard system that enhances player engagement.",
+      "metadataDescription": "Planet Clicker 2022 is the second most popular Planet Clicker game on Scratch. This unique version offers a distinctly different gameplay experience with innovative mechanics and a dynamic leaderboard system that enhances player engagement.",
+      "image": "https://mt.free-online-games.co/planet-clicker-game/planet-clicker-2022/planet-clicker-2022-logo.webp",
+      "playUrl": "sci-fi-clicker-games/planet-clicker-2022/index.html",
+      "coverImage": "https://mt.free-online-games.co/planet-clicker-game/planet-clicker-2022/planet-clicker-2022-bj.webp",
+      "coverAlt": "Planet Clicker 2022 Background",
+      "developer": "Independent Studio",
+      "technology": "HTML5",
+      "platforms": [
+        "Web Browser"
+      ],
+      "tags": [
+        "PvP"
+      ],
+      "plays": 0,
+      "ratingCount": 0,
+      "favorites": 0,
+      "likes": 0,
+      "siteAddedAt": "2026-05-18",
+      "hot": true,
+      "matchBridge": false,
+      "detailHtml": "<section class=\"mb-12\">\n          <h3 class=\"text-2xl font-bold text-gray-900 dark:text-white mb-4\">About Planet Clicker 2022</h3>\n          <p class=\"text-gray-700 dark:text-gray-300\">Planet Clicker 2022 is the second most popular Planet Clicker game on Scratch. This unique version offers a distinctly different gameplay experience with innovative mechanics and a dynamic leaderboard system that enhances player engagement.</p>\n        </section>",
+      "playerModes": [
+        "multiplayer"
+      ],
+      "controls": [
+        "keyboard-mouse"
+      ],
+      "loadSpeed": "normal-loading",
+      "gameplay": [
+        "pvp"
+      ],
+      "perspective": [
+        "third-person"
+      ]
+    }
+  ],
+  "home": {
+    "backgroundImage": "/2v2-io-bj.webp",
+    "coverTagline": "2v2.io is a fast-paced battle royale game that fuses sharp shooting with instant building, where you and your teammate fight to be the last squad standing in a shrinking arena.​",
+    "relatedGameIds": [
+      "planet-clicker",
+      "planet-clicker-2",
+      "planet-clicker-unlocked",
+      "planet-clicker-pro",
+      "planet-clicker-2019",
+      "planet-clicker-2022"
+    ],
+    "structuredImageCaption": "2v2.io game icon",
+    "descriptionHtml": "<section><h3>About 2v2.io</h3><p>2v2.io is a fast-paced battle royale game that fuses sharp shooting with instant building, where you and your teammate fight to be the last squad standing in a shrinking arena.​</p></section>",
+    "heroAlt": "2v2.io gameplay",
+    "youtube": {
+      "videoId": "0sIH1sUAQ0o",
+      "title": "2v2.io Gameplay",
+      "description": "Watch and learn the best strategies to maximize your space exploration!"
+    },
+    "faqItems": [
+      {
+        "question": "Do I need to download anything to play?",
+        "answer": "No download needed. 2v2.io runs directly in your web browser, so you can jump into a match quickly."
+      },
+      {
+        "question": "Can I play with a friend?",
+        "answer": "Yes. 2v2.io is designed around two-player squads, so playing with a friend is the best way to coordinate and win."
+      },
+      {
+        "question": "What kind of game is 2v2.io?",
+        "answer": "It is a duo-focused battle royale shooter with simplified instant building. You fight other squads while the safe zone shrinks, so every match pushes you into action."
+      },
+      {
+        "question": "Does 2v2.io have cosmetics or progression?",
+        "answer": "Yes. Many versions include unlockable cosmetics such as skins and hats, typically earned through playing and winning."
+      },
+      {
+        "question": "Is 2v2.io mobile-friendly?",
+        "answer": "2v2.io is best on desktop browsers for precise aim and building. Some devices may work, but keyboard-and-mouse is the intended experience."
+      }
+    ]
+  },
+  "hotGames": {
+    "heading": "Hot Games",
+    "description": "Browse the games receiving the most real play activity.",
+    "limit": 7,
+    "metadataTitle": "Hot Games - 2v2.io",
+    "metadataDescription": "Browse popular browser games ranked by real play activity.",
+    "socialDescription": "Browse popular browser games.",
+    "keywords": "hot games, popular games, 2v2.io"
+  },
+  "filterPage": {
+    "heading": "Shooting Games",
+    "filteredHeadingSuffix": "Shooting Games",
+    "description": "Play free shooting games online. Filter by player mode, controls, load speed, gameplay, and perspective to find the right game faster.",
+    "resultNoun": "shooting game",
+    "metadataTitle": "Shooting Games - Play Free Online | 1v1-lol.cc",
+    "metadataDescription": "Play free shooting games online. Filter by player mode, controls, load speed, gameplay, and perspective to find the right game faster.",
+    "attributesTitle": "Game Attributes",
+    "attributesDescription": "Combine the five fixed attributes to find matching games.",
+    "resultsTitle": "Available Games",
+    "emptyTitle": "No games match this combination yet.",
+    "clearLabel": "Clear filters",
+    "clearAllLabel": "Clear all",
+    "legacyMessage": "Game filters have moved.",
+    "legacyLinkLabel": "Open Shooting Games",
+    "legacyMetadataTitle": "Shooting Games - 1v1-lol.cc",
+    "legacyMetadataDescription": "Browse free online shooting games by player mode, controls, load speed, gameplay, and perspective."
+  },
+  "cloudflare": {
+    "accountId": "",
+    "pagesProject": "2v2-io",
+    "productionBranch": "main",
+    "database": {
+      "binding": "DB",
+      "name": "2v2-io",
+      "id": "",
+      "previewId": "",
+      "location": "enam"
+    }
+  },
+  "competition": {
+    "adapterId": "1v1-lol"
+  },
+  "ranking": {
+    "excludedGameIds": []
+  },
+  "legal": {
+    "pages": {
+      "aboutUs": {
+        "path": "/about-us",
+        "navLabel": "About Us",
+        "eyebrow": "Who we are",
+        "title": "About 2v2-io.com",
+        "metadataTitle": "About Us",
+        "description": "A player-focused browser gaming site built for quick access and straightforward discovery.",
+        "seoDescription": "Learn about 2v2-io.com and the browser game experience we are building."
+      },
+      "contactUs": {
+        "path": "/contact-us",
+        "navLabel": "Contact Us",
+        "eyebrow": "Get in touch",
+        "title": "Contact Us",
+        "metadataTitle": "Contact Us",
+        "description": "Tell us about a broken game, site issue, suggestion, privacy request, or rights-related concern.",
+        "seoDescription": "Contact 2v2-io.com for support, feedback, privacy questions, or copyright matters."
+      },
+      "dmca": {
+        "path": "/dmca",
+        "navLabel": "DMCA",
+        "eyebrow": "Copyright",
+        "title": "DMCA and Copyright Policy",
+        "metadataTitle": "DMCA and Copyright Policy",
+        "description": "We respect intellectual property rights and review sufficiently detailed copyright notices concerning 2v2-io.com.",
+        "seoDescription": "Learn how to report alleged copyright infringement to 2v2-io.com.",
+        "showLastUpdated": true
+      },
+      "terms": {
+        "path": "/terms-of-service",
+        "navLabel": "Terms of Service",
+        "eyebrow": "Legal",
+        "title": "Terms of Service",
+        "metadataTitle": "Terms of Service",
+        "description": "These terms govern access to 2v2-io.com, its games, community features, and related services.",
+        "seoDescription": "Read the terms governing access to 2v2-io.com.",
+        "showLastUpdated": true
+      },
+      "privacy": {
+        "path": "/privacy-policy",
+        "navLabel": "Privacy Policy",
+        "eyebrow": "Privacy",
+        "title": "Privacy Policy",
+        "metadataTitle": "Privacy Policy",
+        "description": "This policy explains information processed when you visit 2v2-io.com, play games, or use community features.",
+        "seoDescription": "Learn what information 2v2-io.com processes.",
+        "showLastUpdated": true
+      }
+    },
+    "aboutUs": {
+      "whyBuilt": {
+        "title": "Why We Built This Site",
+        "paragraphs": [
+          "2v2.io helps players discover and start browser games without a lengthy installation process."
+        ]
+      },
+      "catalog": {
+        "title": "What You Can Find Here",
+        "paragraphs": [
+          "Browse games by popularity, freshness, and gameplay attributes.",
+          "Games may be delivered from our infrastructure or embedded from third-party providers, and availability can change."
+        ]
+      },
+      "profiles": {
+        "title": "Player Profiles and Community Activity",
+        "paragraphs": [
+          "A mandatory account is not required unless a specific feature says otherwise.",
+          "Local progress can be lost when browser data is cleared or a player changes device or browser."
+        ],
+        "privacyLinkLabel": "Privacy Policy"
+      },
+      "independence": {
+        "title": "Independent Website",
+        "paragraphs": [
+          "2v2-io.com is an independent website. Third-party game names, artwork, logos, and trademarks belong to their respective owners."
+        ]
+      },
+      "contact": {
+        "title": "Contact",
+        "lead": "For support, suggestions, privacy requests, or copyright concerns, visit our",
+        "linkLabel": "Contact Us",
+        "suffix": "page or email"
+      }
+    }
+  },
+  "features": {
+    "activityFeed": false,
+    "leaderboard": false,
+    "comments": true,
+    "ratings": true,
+    "engagement": true,
+    "matchEvents": false,
+    "gameLibrary": true,
+    "feedback": false,
+    "analytics": true,
+    "advertising": true,
+    "friendLinks": true
+  },
+  "theme": {
+    "defaultMode": "light",
+    "layout": {
+      "listMaxWidth": "1200px",
+      "gameBaseMaxWidth": "1180px",
+      "gameDesktopWidth": "70vw",
+      "gameDesktopMaxWidth": "1574px"
+    },
+    "colors": {
+      "pageLight": "#f0fdf4",
+      "pageDark": "#14532d",
+      "primaryLight": "#15803d",
+      "primaryDark": "#166534"
+    },
+    "feedback": {
+      "light": {
+        "primary": "#15803d",
+        "hover": "#16a34a",
+        "active": "#166534",
+        "onPrimary": "#ffffff"
+      },
+      "dark": {
+        "primary": "#166534",
+        "hover": "#15803d",
+        "active": "#14532d",
+        "onPrimary": "#ffffff"
+      }
+    }
+  }
+}

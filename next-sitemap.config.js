@@ -1,8 +1,10 @@
+const siteManifest = require('./site/manifest.json');
+
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: 'https://2v2-io.com/',
+  siteUrl: siteManifest.site.url,
   generateRobotsTxt: true,
-  exclude: [],
+  exclude: [siteManifest.routes.legacyTags],
   changefreq: 'daily',
   priority: 0.7,
   outDir: './out',
@@ -12,20 +14,39 @@ module.exports = {
       {
         userAgent: '*',
         allow: '/',
-      
+        disallow: ['/admin/', '/private/']
+      },
+      {
+        userAgent: [
+          'GPTBot',
+          'Claude-Web',
+          'Anthropic-AI',
+          'anthropic-ai',
+          'PerplexityBot',
+          'GoogleOther',
+          'DuckAssistBot',
+          'CCBot',
+          'ChatGPT-User',
+          'Google-Extended',
+          'OAI-SearchBot'
+        ],
+        allow: [
+          '/llms.txt',
+          '/llms-full.txt',
+          '/blog/',
+          '/products/',
+          '/about-us',
+          '/contact-us',
+          '/dmca',
+          '/terms-of-service',
+          '/privacy-policy'
+        ],
+        disallow: ['/user-content/']
       }
     ],
     additionalSitemaps: [
-      'https://2v2-io.com/sitemap.xml'
-    ]
-  },
-  transform: (config, path) => {
-    // 自定义转换逻辑
-    return {
-      loc: path,
-      changefreq: config.changefreq,
-      priority: config.priority,
-      lastmod: config.autoLastmod ? new Date().toISOString() : undefined,
-    }
+      `${siteManifest.site.url}/sitemap.xml`
+    ],
+    // 移除 Host 配置，因为它不是标准的 robots.txt 指令
   }
 }

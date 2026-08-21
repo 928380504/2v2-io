@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Local Site Studio</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand"><span class="brand-mark">GS</span><div><strong>Site Studio</strong><small>Local configuration</small></div></div>
+        <nav id="section-nav" aria-label="Configuration sections">
+          <button class="nav-item active" data-section="site"><span>01</span>Site identity</button>
+          <button class="nav-item" data-section="routes"><span>02</span>Routes & category</button>
+          <button class="nav-item" data-section="theme"><span>03</span>Theme & features</button>
+          <button class="nav-item" data-section="pages"><span>04</span>Page content</button>
+          <button class="nav-item" data-section="games"><span>05</span>Game catalog</button>
+          <button class="nav-item" data-section="filters"><span>06</span>Game filters</button>
+          <button class="nav-item" data-section="legal"><span>07</span>Legal content</button>
+          <button class="nav-item" data-section="deployment"><span>08</span>Deployment</button>
+          <button class="nav-item" data-section="advanced"><span>09</span>Advanced JSON</button>
+        </nav>
+        <div class="local-note"><strong>Local only</strong><span>This studio is not included in the public website.</span></div>
+      </aside>
+      <main class="workspace">
+        <header class="topbar">
+          <div><p class="eyebrow">Browser game template</p><h1 id="page-title">Site identity</h1><p id="page-description">Edit the site name, domain, assets, and search metadata.</p></div>
+          <div class="top-actions"><span id="save-state" class="state-pill">Loading…</span><button id="reload-button" class="button secondary" type="button">Reload</button><button id="preview-button" class="button secondary" type="button">Preview changes</button><button id="save-button" class="button primary" type="button" disabled>Save & generate</button></div>
+        </header>
+        <div id="notice" class="notice hidden" role="status"></div>
+        <section id="section-site" class="page-section active">
+          <div class="section-heading"><div><h2>Site identity</h2><p>Values shared across navigation, SEO, legal pages, storage, and APIs.</p></div></div>
+          <div class="card form-grid" id="site-fields"></div>
+          <div class="section-heading compact"><div><h2>Assets</h2><p>Local paths begin with “/”. Game files may use the game origin.</p></div></div>
+          <div class="card form-grid" id="asset-fields"></div>
+          <div class="section-heading compact"><div><h2>Search metadata</h2><p>The home-page title and description shown to search engines.</p></div></div>
+          <div class="card form-grid" id="seo-fields"></div>
+        </section>
+        <section id="section-routes" class="page-section">
+          <div class="section-heading"><div><h2>Routes & category</h2><p>Public collection paths must be unique, lowercase, and use one path segment.</p></div></div>
+          <div class="card form-grid" id="route-fields"></div>
+          <div class="section-heading compact"><div><h2>Primary category</h2><p>Controls the category page heading, copy, and metadata.</p></div></div>
+          <div class="card form-grid" id="category-fields"></div>
+        </section>
+        <section id="section-theme" class="page-section">
+          <div class="section-heading"><div><h2>Theme</h2><p>Preview the primary colors while keeping the public layout responsive.</p></div></div>
+          <div class="card form-grid" id="theme-fields"></div>
+          <div class="section-heading compact"><div><h2>Features</h2><p>Switch public modules on or off without editing components.</p></div></div>
+          <div class="card toggle-grid" id="feature-fields"></div>
+        </section>
+        <section id="section-pages" class="page-section">
+          <div class="section-heading"><div><h2>Home page</h2><p>Manage the main cover, article, video, recommendations, and FAQ.</p></div></div>
+          <div class="card form-grid" id="home-fields"></div>
+          <div class="section-heading compact"><div><h2>FAQ</h2><p>Questions appear in their current order on the home page.</p></div><button id="add-faq-button" class="button secondary" type="button">+ Add question</button></div>
+          <div id="faq-editor" class="stack"></div>
+          <div class="section-heading compact"><div><h2>Hot Games page</h2><p>Public heading and search metadata for the fixed /hot-games route.</p></div></div>
+          <div class="card form-grid" id="hot-games-fields"></div>
+          <div class="section-heading compact"><div><h2>Filter page copy</h2><p>Labels and metadata used by the configurable filter route.</p></div></div>
+          <div class="card form-grid" id="filter-page-fields"></div>
+        </section>
+        <section id="section-games" class="page-section">
+          <div class="section-heading"><div><h2>Game catalog</h2><p>Add or edit a game once; routes, cards, filters, and metadata are generated from it.</p></div><button id="add-game-button" class="button secondary" type="button">+ Add game</button></div>
+          <div class="catalog-layout"><aside class="catalog-list card"><input id="game-search" class="search" type="search" placeholder="Search games" /><div id="game-list"></div></aside><div id="game-editor" class="card editor-card"></div></div>
+        </section>
+        <section id="section-filters" class="page-section">
+          <div class="section-heading"><div><h2>Game filters</h2><p>These groups drive the filter page, Similar Games, tags, and game editor choices.</p></div><button id="add-filter-button" class="button secondary" type="button">+ Add group</button></div>
+          <div id="filter-settings" class="card form-grid filter-settings"></div>
+          <div id="filter-editor" class="stack"></div>
+        </section>
+        <section id="section-legal" class="page-section">
+          <div class="section-heading"><div><h2>Legal pages</h2><p>Edit visible copy and metadata while keeping the five public routes stable.</p></div></div>
+          <div id="legal-pages-editor" class="stack"></div>
+          <div class="section-heading compact"><div><h2>About Us sections</h2><p>Reusable editorial sections shown on the About Us page.</p></div></div>
+          <div id="about-editor" class="stack"></div>
+        </section>
+        <section id="section-deployment" class="page-section">
+          <div class="section-heading"><div><h2>Cloudflare Pages & D1</h2><p>Deployment identifiers only. API tokens remain outside the blueprint.</p></div></div>
+          <div class="card form-grid" id="cloudflare-fields"></div>
+          <div class="section-heading compact"><div><h2>Competition & rankings</h2><p>Select a packaged scoring model and exclude utility pages from public rankings.</p></div></div>
+          <div class="card form-grid" id="competition-fields"></div>
+          <div class="card game-checklist" id="ranking-exclusions"></div>
+        </section>
+        <section id="section-advanced" class="page-section">
+          <div class="section-heading"><div><h2>Advanced JSON</h2><p>Edit fields not yet represented by a visual control. Invalid JSON cannot be previewed or saved.</p></div></div>
+          <div class="card"><div class="code-toolbar"><span>site/blueprint.json</span><button id="format-json-button" class="button small secondary" type="button">Format JSON</button></div><textarea id="json-editor" class="json-editor" spellcheck="false"></textarea></div>
+        </section>
+      </main>
+    </div>
+    <dialog id="resource-dialog" class="wide-dialog"><div class="dialog-card"><div class="dialog-heading"><div><p class="eyebrow">Public assets</p><h2>Choose an existing image</h2><p>Only image files already inside this site's public folder are shown.</p></div><button class="icon-button" type="button" data-close-dialog="resource-dialog" aria-label="Close">×</button></div><input id="resource-search" class="search" type="search" placeholder="Search image paths" /><div id="resource-gallery" class="resource-gallery"></div><div class="dialog-actions"><button class="button secondary" type="button" data-close-dialog="resource-dialog">Cancel</button></div></div></dialog>
+    <dialog id="structured-dialog" class="wide-dialog"><div class="dialog-card"><div class="dialog-heading"><div><p class="eyebrow">Structured content</p><h2 id="structured-dialog-title">Edit article sections</h2><p>Reorder headings and section bodies without changing the public component.</p></div><button class="icon-button" type="button" data-close-dialog="structured-dialog" aria-label="Close">×</button></div><div id="structured-section-list" class="structured-list"></div><button id="add-structured-section" class="button secondary" type="button">+ Add section</button><div class="dialog-actions"><button class="button secondary" type="button" data-close-dialog="structured-dialog">Cancel</button><button id="apply-structured-sections" class="button primary" type="button">Apply to HTML field</button></div></div></dialog>
+    <dialog id="preview-dialog"><form method="dialog" class="dialog-card"><div class="dialog-heading"><div><p class="eyebrow">Safety review</p><h2>Review generated changes</h2></div><button class="icon-button" value="cancel" aria-label="Close">×</button></div><div id="preview-summary"></div><label class="field"><span>Type the site ID to confirm</span><input id="confirm-site-id" autocomplete="off" /></label><div class="dialog-actions"><button class="button secondary" value="cancel">Cancel</button><button id="confirm-save-button" class="button primary" value="none" type="button">Save, validate & generate</button></div></form></dialog>
+    <script src="/app.js" defer></script>
+  </body>
+</html>

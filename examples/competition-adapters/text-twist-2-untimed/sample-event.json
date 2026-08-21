@@ -1,0 +1,30 @@
+{
+  "events": [
+    {
+      "schemaVersion": 1,
+      "eventId": "3a6dd563-08f8-49b4-ae41-346c51dc3c67",
+      "eventType": "score.completed",
+      "gameId": "text-twist-2-untimed",
+      "profileId": "8462c9f4-37b9-43ac-aa0c-109c10374cb1",
+      "runId": "c61df622-6880-4ae5-83b7-8b4e830b35cb",
+      "player": {
+        "profileId": "8462c9f4-37b9-43ac-aa0c-109c10374cb1",
+        "nickname": "Guest-2481"
+      },
+      "score": {
+        "modeKey": "untimed",
+        "value": 12340,
+        "roundsCompleted": 8,
+        "wordsFound": 73,
+        "longestWordLength": 7,
+        "bingoWordsFound": 6
+      },
+      "occurredAt": 1786946400000,
+      "client": {
+        "gameVersion": "2.0.0",
+        "profileRevision": 4
+      }
+    }
+  ]
+}
+

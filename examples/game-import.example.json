@@ -1,0 +1,22 @@
+{
+  "games": [
+    {
+      "id": "space-arena",
+      "title": "Space Arena",
+      "description": "A fast browser shooter where players compete in compact arenas using precise movement and tactical weapons.",
+      "categoryId": "1v1-lol-games",
+      "developer": "Independent Studio",
+      "technology": "HTML5",
+      "platforms": "Web Browser,Desktop",
+      "playerModes": "single-player,multiplayer",
+      "controls": "keyboard-mouse,gamepad",
+      "loadSpeed": "normal-loading",
+      "gameplay": "pvp",
+      "perspective": "third-person",
+      "tags": "PvP,Shooter",
+      "image": "1v1-lol-games/space-arena/space-arena-logo.webp",
+      "coverImage": "1v1-lol-games/space-arena/space-arena-bj.webp",
+      "playUrl": "1v1-lol-games/space-arena/index.html"
+    }
+  ]
+}

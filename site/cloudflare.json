@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "accountId": "",
+  "pagesProject": "2v2-io",
+  "productionUrl": "https://2v2-io.com",
+  "productionBranch": "main",
+  "database": {
+    "binding": "DB",
+    "name": "2v2-io",
+    "id": "",
+    "previewId": "",
+    "location": "enam"
+  },
+  "health": {
+    "timeoutMs": 10000,
+    "checks": [
+      {
+        "name": "site",
+        "path": "/",
+        "expect": "html"
+      },
+      {
+        "name": "binding",
+        "path": "/api/health",
+        "expect": "ok"
+      },
+      {
+        "name": "ratings",
+        "path": "/api/comments/ratings?gameIds={primaryGameId}",
+        "expect": "ok"
+      },
+      {
+        "name": "daily leaderboard",
+        "path": "/api/leaderboard/daily?limit=1",
+        "expect": "ok"
+      },
+      {
+        "name": "ticker",
+        "path": "/api/ticker?limit=1",
+        "expect": "ok"
+      }
+    ]
+  }
+}

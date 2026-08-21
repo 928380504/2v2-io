@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "groups": {
+    "community": [
+      "migrations/0005_comments.sql",
+      "migrations/0006_game_engagement.sql",
+      "migrations/0008_game_vote_limits.sql"
+    ],
+    "1v1-lol": [
+      "migrations/0001_match_events.sql",
+      "migrations/0002_daily_feed_events.sql",
+      "migrations/0003_daily_podium.sql",
+      "migrations/0004_revenge_lookup.sql",
+      "migrations/0007_leaderboard_stats.sql",
+      "migrations/0009_leaderboard_rank_snapshots.sql",
+      "migrations/0010_leaderboard_previous_day_wins.sql"
+    ]
+  }
+}
