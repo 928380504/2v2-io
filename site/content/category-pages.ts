@@ -5,14 +5,14 @@ import { SITE_ROUTES } from "@/site/routes";
 import { SITE_CONFIG, siteUrl } from "@/site/site";
 
 export const PRIMARY_CATEGORY_PAGE = {
-  categoryId: "sci-fi-clicker-games",
+  categoryId: "2v2-io-games",
   path: SITE_ROUTES.gameCategory,
-  heading: "Sci-Fi Clicker Games",
-  description: "Discover our collection of addictive clicker games. From candy collecting to planet exploration, find your perfect idle adventure!",
-  metadataTitle: "Sci-Fi Clicker Games - Play Online",
-  metadataDescription: "Discover our collection of addictive clicker games. From candy collecting to planet exploration, find your perfect idle adventure!",
-  socialDescription: "Discover our collection of addictive clicker games. From candy collecting to planet exploration, find your perfect idle adventure!",
-  keywords: "2v2.io",
+  heading: "2v2.io Games",
+  description: "Play fast multiplayer shooters, building battles, and battle royale games related to 2v2.io. Team up, build defenses, and outplay rivals online.",
+  metadataTitle: "2v2.io Games - Multiplayer Shooting and Building Games",
+  metadataDescription: "Play 2v2.io and discover similar multiplayer shooters, building battles, and browser battle royale games.",
+  socialDescription: "Discover multiplayer shooting, building, and battle royale games similar to 2v2.io.",
+  keywords: "2v2.io games, multiplayer shooting games, building games, battle royale games",
 } as const;
 
 export const CATEGORY_PAGES = { primary: PRIMARY_CATEGORY_PAGE } as const;

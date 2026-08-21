@@ -4,12 +4,12 @@ export const HOME_PAGE = {
     backgroundImage: "/2v2-io-bj.webp",
     coverTagline: "2v2.io is a fast-paced battle royale game that fuses sharp shooting with instant building, where you and your teammate fight to be the last squad standing in a shrinking arena.​",
     relatedGameIds: [
-    "planet-clicker",
-    "planet-clicker-2",
-    "planet-clicker-unlocked",
-    "planet-clicker-pro",
-    "planet-clicker-2019",
-    "planet-clicker-2022"
+    "1v1-lol",
+    "buildnow-gg",
+    "fortzone-battle-royale",
+    "mini-royale-nations",
+    "voxiom-io",
+    "krunker-io"
   ],
   },
   structuredImageCaption: "2v2.io game icon",
@@ -19,7 +19,7 @@ export const HOME_PAGE = {
     youtube: {
     "videoId": "0sIH1sUAQ0o",
     "title": "2v2.io Gameplay",
-    "description": "Watch and learn the best strategies to maximize your space exploration!"
+    "description": "Watch 2v2.io gameplay and learn how coordinated building, positioning, and shooting can help your team win."
   },
     faqItems: [
     {

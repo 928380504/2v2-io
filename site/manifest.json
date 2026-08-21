@@ -10,7 +10,7 @@
     "locale": "en_US",
     "email": "js928380504@126.com",
     "timeZone": "America/New_York",
-    "primaryCategoryId": "sci-fi-clicker-games",
+    "primaryCategoryId": "2v2-io-games",
     "primaryGameId": "2v2-io",
     "legalLastUpdated": "August 8, 2026",
     "assets": {
@@ -23,9 +23,13 @@
       "title": "2v2.io - Play Online for Free!",
       "description": "2v2.io is a fast-paced battle royale game that fuses sharp shooting with instant building, where you and your teammate fight to be the last squad standing in a shrinking arena.​",
       "keywords": [
-        "2v2.io"
+        "2v2.io",
+        "2v2 io",
+        "multiplayer shooting games",
+        "building games",
+        "battle royale games"
       ],
-      "twitterCreator": "@PlanetClicker"
+      "twitterCreator": ""
     },
     "navigation": {
       "links": [
@@ -46,8 +50,8 @@
     "footer": {
       "gameIds": [
         "2v2-io",
-        "planet-clicker",
-        "planet-clicker-2"
+        "1v1-lol",
+        "buildnow-gg"
       ]
     },
     "integrations": {
@@ -57,7 +61,7 @@
   "routes": {
     "home": "/",
     "hotGames": "/hot-games",
-    "gameCategory": "/sci-fi-clicker-games",
+    "gameCategory": "/2v2-io-games",
     "gameFilters": "/shooting-games",
     "legacyTags": "/tags",
     "aboutUs": "/about-us",
