@@ -56,13 +56,30 @@ function fixture() {
 }
 
 test("normalizes a complete site blueprint", () => {
-  const blueprint = normalizeSiteBlueprint(example(), { root: sourceRoot, today: "2026-08-17" });
+  const input = example();
+  input.hotGames.limit = 8;
+  const blueprint = normalizeSiteBlueprint(input, { root: sourceRoot, today: "2026-08-17" });
   assert.equal(blueprint.site.id, "1v1-lol");
   assert.equal(blueprint.category.id, "1v1-lol-games");
   assert.equal(blueprint.games.length, 1);
   assert.equal(blueprint.games[0].attributeEntries.length, 5);
   assert.equal(blueprint.competition.adapterId, "1v1-lol");
   assert.equal(blueprint.cloudflare.database.location, "enam");
+  assert.equal(Object.hasOwn(blueprint.hotGames, "limit"), false);
+});
+
+test("keeps the Hot Games page on the template-wide top-21 contract", () => {
+  const rankingSource = fs.readFileSync(
+    path.join(sourceRoot, "config", "popular-games.ts"),
+    "utf8",
+  );
+  const pageSource = fs.readFileSync(
+    path.join(sourceRoot, "components", "templates", "HotGamesPageTemplate.tsx"),
+    "utf8",
+  );
+  assert.match(rankingSource, /HOT_GAMES_PAGE_LIMIT\s*=\s*21/);
+  assert.match(pageSource, /limit=\{HOT_GAMES_PAGE_LIMIT\}/);
+  assert.doesNotMatch(pageSource, /HOT_GAMES_PAGE\.limit/);
 });
 
 test("builds a clean catalog, stable primary category contract and resource checklist", () => {
@@ -72,12 +89,14 @@ test("builds a clean catalog, stable primary category contract and resource chec
     const readWrite = (relativePath) => plan.writes.get(path.join(root, ...relativePath.split("/")));
     const catalog = readWrite("site/content/game-catalog-data.ts");
     const categoryPages = readWrite("site/content/category-pages.ts");
+    const hotGamesPage = readWrite("site/content/hot-games-page.ts");
     const ranking = readWrite("site/content/popular-games.ts");
     const checklist = JSON.parse(readWrite("site/generated/resource-checklist.json"));
     const cloudflare = JSON.parse(readWrite("site/cloudflare.json"));
     assert.match(catalog, /"1v1-lol": \{/);
     assert.doesNotMatch(catalog, /1v1-lol-pro/);
     assert.match(categoryPages, /PRIMARY_CATEGORY_PAGE/);
+    assert.doesNotMatch(hotGamesPage, /\blimit\s*:/);
     assert.match(ranking, /gameRankingExcludedIds/);
     assert.doesNotMatch(ranking, /sortByPopularGameOrder/);
     assert.ok(checklist.resources.some((resource) => resource.kind === "homeBackground"));

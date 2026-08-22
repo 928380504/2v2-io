@@ -160,8 +160,7 @@
   },
   "hotGames": {
     "heading": "Hot Games",
-    "description": "Browse the games receiving the most real play activity.",
-    "limit": 21
+    "description": "Browse the games receiving the most real play activity."
   },
   "filterPage": {
     "heading": "Shooting Games",

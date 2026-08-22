@@ -6,6 +6,9 @@ export const GAME_POPULARITY_WEIGHTS = {
   favorites: 50,
 } as const;
 
+/** Every Hot Games page shows the same global top-21 ranking. */
+export const HOT_GAMES_PAGE_LIMIT = 21;
+
 export const NEW_GAME_BADGE_MAX_AGE_MS = 45 * 24 * 60 * 60 * 1000;
 
 export type GameRankingBadge = "top" | "new" | "hot";

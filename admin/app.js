@@ -292,7 +292,7 @@ function renderPages() {
   ]);
   renderFaq();
   renderSimpleFields("#hot-games-fields", [
-    { path:"hotGames.heading", label:"Page heading" }, { path:"hotGames.limit", label:"Maximum games", type:"number", min:1, max:100 },
+    { path:"hotGames.heading", label:"Page heading" },
     { path:"hotGames.description", label:"Page description", type:"textarea", wide:true }, { path:"hotGames.metadataTitle", label:"Metadata title", wide:true },
     { path:"hotGames.metadataDescription", label:"Metadata description", type:"textarea", wide:true }, { path:"hotGames.socialDescription", label:"Social description", type:"textarea", wide:true },
     { path:"hotGames.keywords", label:"Keywords", wide:true },

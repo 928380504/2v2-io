@@ -46,6 +46,7 @@ test("exports the current site package into one validated editable blueprint", (
   assert.equal(blueprint.category.description.length > 40, true);
   assert.equal(blueprint.legal.pages.dmca.showLastUpdated, true);
   assert.equal(blueprint.cloudflare.database.location, checkedIn.cloudflare.database.location);
+  assert.equal(Object.hasOwn(blueprint.hotGames, "limit"), false);
 });
 
 test("the exported blueprint preserves rich content through site generation", () => {

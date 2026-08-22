@@ -569,7 +569,6 @@ export function extractLegacySite({
     hotGames: {
       heading: "Hot Games",
       description: "Browse the games receiving the most real play activity.",
-      limit: Math.min(21, extractedGames.length),
     },
     filterPage: {
       ...baseBlueprint.filterPage,

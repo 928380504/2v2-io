@@ -227,7 +227,6 @@ export function exportCurrentSiteBlueprint(root) {
     hotGames: {
       heading: hotGames.heading,
       description: hotGames.description,
-      limit: hotGames.limit,
       metadataTitle: hotGames.metadataTitle,
       metadataDescription: hotGames.metadataDescription,
       socialDescription: hotGames.socialDescription,

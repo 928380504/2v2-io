@@ -1,8 +1,8 @@
 ---
 template: browser-game-template
-version: 2.26.1
-documentation_revision: 53
-last_verified: 2026-08-20
+version: 2.26.2
+documentation_revision: 54
+last_verified: 2026-08-22
 status: stable
 ---
 
@@ -141,6 +141,8 @@ out/                         静态导出与编译后的 Pages Worker
 纯模板默认关闭 `activityFeed`、`leaderboard` 和 `matchEvents`，因此没有 D1、对局桥或玩家数据时也能直接使用。首页仍保持 80/20 游戏区，原玩家榜位置自动显示 Popular/New 游戏排行；站点接入竞赛数据库后再在蓝图中开启这三个功能。Popular 的全站热度统一为 `播放量 × 1 + 点赞 × 5 + 收藏 × 50`；三项接口数据完整时使用真实统计，否则整批回退到游戏目录初始值，禁止把局部实时值与其他游戏的初始值混排。并列时依次比较收藏、点赞、播放、`siteAddedAt` 和游戏 ID。New 始终按站内上架时间 `siteAddedAt` 排序，不使用游戏原始发行时间。
 
 全站参与排行的游戏少于 30 个时，方形卡片角标范围为 TOP 1–3、HOT 4–8、NEW 最近 5 个；达到 30 个后改为 TOP 1–5、HOT 6–15、NEW 最近 10 个。NEW 还必须处于上架后 45 天内。每张卡片只显示一个角标，优先级固定为 `TOP > NEW > HOT`。`/hot-games`、分类页、筛选页、相关游戏榜 Popular、方形卡片角标以及其他热度入口必须共享 `useGlobalGameRankings` 产生的全站名次；筛选只改变可见集合，不能改变游戏的全站名次。
+
+`/hot-games` 的展示数量由模板核心统一固定为全站热度前 21 名。每个未进入排行排除项的新增游戏都会自动参与同一热度排序；达到前 21 名时自动进入页面，跌出前 21 名时自动移出。站点蓝图和本地可视化后台不提供单站数量上限，旧蓝图中的 `hotGames.limit` 会在重新生成时被忽略。旧站提取器也不得按迁移当时的游戏数量固化上限。
 
 页面主体内容统一使用 `.site-container-width`：跑马灯、首页、游戏内页、分类页、热门页、标签筛选页和法律信息页均从同一个容器宽度规则读取。模板默认使用 `clamp(960px, 70vw, 1574px)`，并保留至少 16px 的左右视口安全边距；站点通过既有 `theme.layout.gameBaseMaxWidth`、`gameDesktopWidth` 和 `gameDesktopMaxWidth` 三个字段覆盖主体容器的基础上限、桌面比例与桌面上限。导航栏保持全宽，主页脚继续使用独立的 Tailwind `container`，友情链接保留 1200px 独立上限，不跟随主体容器。旧 `.game-layout-width`、`.site-list-width` 和对应 CSS 变量只作为迁移兼容别名保留，新主体组件不得继续使用。默认 80/20 游戏分栏在 1200px 桌面断点下至少获得约 192px 的右栏，同时其他主体页面与游戏交互区保持左右边界一致。
 

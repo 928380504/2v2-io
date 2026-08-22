@@ -1,6 +1,7 @@
 import { Flame } from "lucide-react";
 import { LiveGameCards } from "@/components/templates/LiveGameCards";
 import { getHotGames, HOT_GAMES_PAGE } from "@/config/hot-games-page";
+import { HOT_GAMES_PAGE_LIMIT } from "@/config/popular-games";
 
 export function HotGamesPageTemplate() {
   const games = getHotGames();
@@ -24,7 +25,7 @@ export function HotGamesPageTemplate() {
           games={games}
           ranked
           orderByPopularity
-          limit={HOT_GAMES_PAGE.limit}
+          limit={HOT_GAMES_PAGE_LIMIT}
         />
       </div>
     </main>

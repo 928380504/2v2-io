@@ -11,6 +11,8 @@ const token = "local-test-token-with-enough-entropy";
 const checkedInBlueprint = JSON.parse(fs.readFileSync(path.join(root, "site", "blueprint.json"), "utf8"));
 
 test("ships syntactically valid browser-side studio code", () => {
+  const source = fs.readFileSync(path.join(root, "admin", "app.js"), "utf8");
+  assert.doesNotMatch(source, /hotGames\.limit|Maximum games/);
   const result = spawnSync(process.execPath, ["--check", path.join(root, "admin", "app.js")], {
     cwd: root,
     encoding: "utf8",

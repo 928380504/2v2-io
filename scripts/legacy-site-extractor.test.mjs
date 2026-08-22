@@ -77,6 +77,7 @@ test("extracts a ready blueprint without modifying the legacy source", () => {
   assert.equal(blueprint.home.backgroundImage, "/demo-games/demo-game/demo-game-bj.webp");
   assert.match(blueprint.games[0].detailHtml, /migrated detail description/);
   assert.equal(blueprint.home.faqItems.length, 2);
+  assert.equal(Object.hasOwn(blueprint.hotGames, "limit"), false);
   for (const group of blueprint.filters.groups) {
     assert.ok(Object.hasOwn(blueprint.games[1], group.attributeKey));
   }
