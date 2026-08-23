@@ -8,7 +8,6 @@ export const HOT_GAMES_PAGE = {
   path: SITE_ROUTES.hotGames,
   heading: "Hot Games",
   description: "Browse the games receiving the most real play activity.",
-  limit: 7,
   metadataTitle: "Hot Games - 2v2.io",
   metadataDescription: "Browse popular browser games ranked by real play activity.",
   socialDescription: "Browse popular browser games.",
