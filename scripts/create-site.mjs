@@ -1,5 +1,6 @@
 import path from "node:path";
 import { parseArguments, writeJson } from "./template-tools.mjs";
+import { cleanGeneratedCaches } from "./generated-cache-tools.mjs";
 import { validateCreatedSite } from "./site-validation-tools.mjs";
 import {
   applySiteCreationPlan,
@@ -35,6 +36,10 @@ try {
   const sourcePath = args.from
     ? path.resolve(root, String(args.from))
     : path.join(root, "site", "blueprint.json");
+  if (args.apply) {
+    const removedCaches = cleanGeneratedCaches(root);
+    if (removedCaches.length) console.log(`Generated caches cleared: ${removedCaches.join(", ")}`);
+  }
   const blueprint = readSiteBlueprint(sourcePath);
   const plan = buildSiteCreationPlan({ root, blueprint });
 

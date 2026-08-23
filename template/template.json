@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "templateId": "browser-game-template",
-  "version": "2.26.2",
-  "documentationRevision": 54,
+  "version": "2.26.3",
+  "documentationRevision": 55,
   "corePaths": [
     ".gitignore",
     "AGENTS.md",

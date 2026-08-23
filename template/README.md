@@ -39,6 +39,7 @@ Start from the versioned example blueprint. Preview is mandatory before apply:
 ```text
 npm run site:create
 npm run site:create -- --apply
+npm run clean:generated
 npm run site:create -- --from examples/site-blueprint.example.json
 npm run site:create -- --from path/to/site-blueprint.json --apply
 ```

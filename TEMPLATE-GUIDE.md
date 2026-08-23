@@ -1,7 +1,7 @@
 ---
 template: browser-game-template
-version: 2.26.2
-documentation_revision: 54
+version: 2.26.3
+documentation_revision: 55
 last_verified: 2026-08-22
 status: stable
 ---
@@ -163,7 +163,7 @@ npm run site:create -- --from path/to/site-blueprint.json --apply
 
 蓝图统一描述站点身份、域名、主题、功能开关、路由、主分类、筛选架构、首页、热门页、完整法律文案、初始游戏目录与内页正文、排行排除项、竞赛适配器和 Cloudflare 目标。生成器会重建对应的站点运行文件、保留已有评分快照，并生成 `site/generated/resource-checklist.json`；它不会下载或伪造 Logo、封面、游戏包等可能受版权约束的资源。
 
-`site:create` 默认只展示变更文件和缺失资源。增加 `--apply` 后，它会先在 `backups/site-create/` 逐文件备份，再写入并执行站点、筛选、后端和 TypeScript 校验；TypeScript 校验前会清除 `.next`、`out/types` 与 `tsconfig.tsbuildinfo` 这三类可再生缓存，再运行 Next.js `typegen`，确保校验只使用当前路由而不是框架升级或重构前的类型和增量图。任一校验失败会恢复所有旧文件并删除本次新增文件，同时保留具体的类型生成或 TypeScript 错误。缺失本地资源时禁止应用，但允许预览。命令不连接远程 D1、不执行 SQL、不部署，也不覆盖 `public/`、`functions/`、远程广告配置或站点组件覆盖；若选择了未安装的内置竞赛适配器，只会像 `competition:install` 一样追加受版本管理的新编号迁移及其分组，绝不回改已有迁移。
+`site:create` 默认只展示变更文件和缺失资源。增加 `--apply` 后，无论蓝图是否产生内容变化，都会先清除 `.next`、`out/types` 与 `tsconfig.tsbuildinfo` 三类可再生缓存；有内容变化时再在 `backups/site-create/` 逐文件备份、写入并执行站点、筛选、后端和 TypeScript 校验。Next.js `typegen` 与 TypeScript 校验结束后会再次清理它们，避免验证过程本身留下旧路由或增量图。也可随时单独运行 `npm run clean:generated`，该命令不会删除 `out` 中的静态网页。缓存若被运行中的开发或构建进程占用，命令会明确要求停止该站进程后重试。任一校验失败会恢复所有旧文件并删除本次新增文件，同时保留具体的类型生成或 TypeScript 错误。缺失本地资源时禁止应用，但允许预览。命令不连接远程 D1、不执行 SQL、不部署，也不覆盖 `public/`、`functions/`、远程广告配置或站点组件覆盖；若选择了未安装的内置竞赛适配器，只会像 `competition:install` 一样追加受版本管理的新编号迁移及其分组，绝不回改已有迁移。
 
 现有站点也可以反向生成后台蓝图：
 
